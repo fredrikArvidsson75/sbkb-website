@@ -234,35 +234,18 @@ button { font: inherit; }
 }
 .brand:hover { color: var(--c-green); }
 
-.brand-mark {
-  display: inline-grid;
-  place-items: center;
-  width: 38px;
-  height: 38px;
-  background: var(--c-green);
-  color: var(--c-cream);
-  font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 26px;
-  line-height: 1;
-  letter-spacing: -0.04em;
-  padding-bottom: 2px;
-  /* OBS: temporär monogram-placeholder.
-     Ersätts med levererad logo enligt BRAND.md §1 — använd <img>. */
+.brand-logo {
+  display: block;
+  width: auto;
+  height: 56px;
+  object-fit: contain;
+  /* Levererad logo: LOGGA_SBKB_VITFRILAGD.png — S-märke + företagsnamn vertikalt */
 }
 
-.brand-lockup {
-  display: inline-flex;
-  flex-direction: column;
-  line-height: 1.05;
-}
-.brand-name {
-  font-family: var(--font-body);
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: var(--c-green);
+/* Vit variant via invertering — fungerar för monokrom svart-på-transparent */
+.brand-logo-light {
+  filter: invert(1) brightness(1.05);
+  height: 64px;
 }
 
 .main-nav {
@@ -671,12 +654,7 @@ button { font: inherit; }
   }
 }
 
-.brand-footer .brand-mark {
-  background: transparent;
-  border: 1px solid var(--c-cream);
-  color: var(--c-cream);
-}
-.brand-footer .brand-name { color: var(--c-cream); }
+.brand-footer { align-items: center; }
 
 .footer-meta {
   display: flex;
@@ -697,7 +675,8 @@ button { font: inherit; }
   .main-nav { gap: var(--s-4); }
   .main-nav a:not(.btn) { display: none; }
   .main-nav a.btn { padding: 10px 16px; font-size: 10px; }
-  .brand-name { font-size: 9px; letter-spacing: 0.18em; }
+  .brand-logo { height: 44px; }
+  .brand-logo-light { height: 52px; }
 }
 
 
