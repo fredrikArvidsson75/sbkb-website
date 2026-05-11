@@ -1,0 +1,18 @@
+# Editor + OS
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# Node (om vi senare lägger till build-process)
+node_modules/
+package-lock.json
+
+# Lokala secrets
+.env
+.env.local
+
+# Tillfälligt
+*.tmp
+*.log

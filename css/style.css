@@ -1,0 +1,71 @@
+/* SBKB — basgrund enligt BRAND.md
+   Tokens + minimal styling. Frontend-design tar över för full layout. */
+
+:root {
+  /* Färger */
+  --c-green: #1F3D2E;
+  --c-green-deep: #152A20;
+  --c-paper: #F8F4EA;
+  --c-cream: #F2EAD8;
+  --c-copper: #A86F3C;
+  --c-ink: #1A1A1A;
+  --c-muted: #6B6358;
+
+  /* Typografi */
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+
+  /* Spacing */
+  --s-1: 4px;
+  --s-2: 8px;
+  --s-3: 12px;
+  --s-4: 16px;
+  --s-6: 24px;
+  --s-8: 32px;
+  --s-12: 48px;
+  --s-16: 64px;
+
+  /* Linjer */
+  --rule: 0.5px solid rgba(31, 61, 46, 0.22);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: var(--s-16) var(--s-8);
+  background: var(--c-paper);
+  color: var(--c-ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 56px;
+  letter-spacing: -0.015em;
+  color: var(--c-green);
+  margin: 0 0 var(--s-6);
+}
+
+.lead {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 22px;
+  color: var(--c-muted);
+  margin: 0 0 var(--s-12);
+}
+
+p {
+  margin: 0 0 var(--s-4);
+}
