@@ -575,6 +575,44 @@ button { font: inherit; }
 }
 
 
+/* --- Hållbarhet (globala målen) --- */
+.hallbarhet {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--s-12);
+  align-items: start;
+}
+@media (min-width: 900px) {
+  .hallbarhet { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: var(--s-16); }
+}
+.hallbarhet > div > .kicker { display: block; margin-bottom: var(--s-4); }
+.mal-list {
+  list-style: none;
+  margin: var(--s-6) 0 0;
+  padding: var(--s-6) 0 0;
+  border-top: var(--rule);
+  display: grid;
+  gap: var(--s-3);
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--c-green);
+  letter-spacing: -0.01em;
+}
+.mal-nr {
+  display: inline-block;
+  min-width: 2ch;
+  margin-right: var(--s-2);
+  color: var(--c-copper);
+}
+.mal-figur { margin: 0; }
+.mal-figur img { width: 100%; height: auto; display: block; }
+.mal-figur figcaption {
+  margin-top: var(--s-2);
+  font-size: var(--type-small);
+  color: var(--c-muted);
+}
+
 /* ============================================================
    KONTAKT
    ============================================================ */
