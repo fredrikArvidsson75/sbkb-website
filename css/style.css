@@ -416,6 +416,32 @@ button { font: inherit; }
   .card-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
+/* Brett kort under de tre tjänsterna — länk till sbkb.se/hemmastyrning */
+.card.card-wide {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--s-6) var(--s-12);
+  color: inherit;
+}
+.card.card-wide:hover { color: inherit; }
+.card-wide-text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+.card-cta {
+  font-size: var(--type-small);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--c-green);
+  border-bottom: 2px solid var(--c-copper);
+  padding-bottom: var(--s-1);
+}
+.card-wide:hover .card-cta { color: var(--c-copper); }
+
 .card {
   background: var(--c-cream);
   padding: clamp(var(--s-8), 3vw, var(--s-12));
