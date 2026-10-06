@@ -416,7 +416,7 @@ button { font: inherit; }
   .card-grid { grid-template-columns: repeat(3, 1fr); }
 }
 
-/* Brett kort under de tre tjänsterna — länk till sbkb.se/hemmastyrning */
+/* Brett kort under de tre tjänsterna — länk till sbkb.se/energistyrning */
 .card.card-wide {
   grid-column: 1 / -1;
   flex-direction: row;
