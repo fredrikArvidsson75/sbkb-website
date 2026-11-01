@@ -348,6 +348,45 @@ textarea.input { min-height: 90px; resize: vertical; }
 
 </style>
 <style>:root{--color-accent:#1F3D2E;--color-accent-600:oklch(0.43 0.06 155);--color-accent-700:oklch(0.28 0.045 155);--color-accent-100:oklch(0.94 0.02 155);--color-accent-800:oklch(0.25 0.04 155)}body{margin:0;background:var(--color-bg)}a{color:var(--color-text)}a:not(.btn):hover{color:var(--color-accent-600)}a:focus-visible{outline:2px solid var(--color-accent);outline-offset:2px}</style>
+<style>
+/* Kartläggning — klicka sig fram. Inget sparas, ingen mätning. */
+.kl [hidden]{display:none!important}
+.kl fieldset{border:0;margin:0;padding:0;min-width:0}
+.kl legend{font-family:var(--font-heading);font-weight:800;font-size:clamp(24px,3.2vw,32px);line-height:1.12;letter-spacing:-.02em;padding:0;margin:0 0 8px;outline:none}
+.kl-help{font-size:15px;line-height:1.5;margin:0 0 20px;color:color-mix(in srgb,var(--color-text) 70%,transparent)}
+.kl-sub{font-size:16px;font-weight:600;margin:0 0 12px}
+.kl-prog{display:flex;align-items:center;gap:14px;margin:0 0 28px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.kl-barwrap{flex:1;height:4px;background:var(--color-divider)}
+.kl-barwrap span{display:block;height:100%;width:25%;background:var(--color-accent);transition:width .2s}
+.kl-opts{display:grid;gap:10px}
+.kl-opt{position:relative;display:flex;align-items:center;gap:14px;min-height:56px;padding:12px 16px;border:2px solid var(--color-divider);cursor:pointer;font-size:17px;line-height:1.3;font-weight:600}
+.kl-opt input{position:absolute;opacity:0;width:0;height:0}
+.kl-opt::before{content:"";flex:none;width:18px;height:18px;border:2px solid var(--color-divider)}
+.kl-opt.r::before{border-radius:50%}
+.kl-opt small{display:block;font-weight:400;font-size:14px;opacity:.85}
+.kl-opt:hover{border-color:var(--color-accent)}
+.kl-opt.on{background:var(--color-accent);border-color:var(--color-accent);color:var(--color-bg)}
+.kl-opt.on::before{border-color:var(--color-bg);background:var(--color-bg)}
+.kl-opt:has(input:focus-visible){outline:2px solid var(--color-accent);outline-offset:2px}
+.kl .field{margin-top:22px}
+.kl .field>label{font-size:15px;font-weight:600;color:var(--color-text);margin-bottom:6px}
+.kl .input{font-size:16px;min-height:50px;padding:10px 12px}
+.kl-hint{display:block;font-size:13px;line-height:1.45;margin-top:6px;color:color-mix(in srgb,var(--color-text) 65%,transparent)}
+.kl-err{margin:16px 0 0;font-weight:600;color:oklch(0.5 0.19 33)}
+.kl-nav{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:28px}
+.kl-nav .btn{font-size:16px;padding:14px 22px;min-height:50px}
+.kl-res h3{font-size:clamp(26px,3.4vw,34px);line-height:1.1;letter-spacing:-.02em;margin:0 0 20px;outline:none}
+.kl-res h4{font-size:20px;margin:32px 0 8px}
+.kl-sum{margin:0}
+.kl-sum div{display:flex;flex-wrap:wrap;gap:2px 16px;padding:10px 0;border-top:1px solid var(--color-divider);font-size:16px}
+.kl-sum dt{flex:0 0 12em;color:color-mix(in srgb,var(--color-text) 65%,transparent)}
+.kl-sum dd{margin:0;font-weight:600}
+.kl-do{list-style:none;margin:0;padding:0}
+.kl-do li{padding:14px 0;border-top:2px solid var(--color-divider);font-size:17px;line-height:1.5}
+.kl-do li:last-child{border-bottom:2px solid var(--color-divider)}
+.kl-note{font-size:15px;line-height:1.5;margin:16px 0 0;color:color-mix(in srgb,var(--color-text) 75%,transparent)}
+.kl textarea.input{min-height:220px;font-size:14px;line-height:1.5}
+</style>
 </head>
 <body>
 <div style="background:var(--color-bg); color:var(--color-text); font-family:var(--font-body); min-height:100vh;">
@@ -363,6 +402,7 @@ textarea.input { min-height: 90px; resize: vertical; }
           <p style="font-size:clamp(18px, 1.8vw, 20px); line-height:1.55; margin:0; max-width:40ch; text-wrap:pretty;">Jag kommer ut till dig och går igenom fastigheten, från villa till flerbostadshus. Vi tittar på vad som drar mest el, jag kopplar upp det och vi gör en energianalys tillsammans. Sedan styrs fastigheten via mobilen, och förbrukningen dras ner när elen är som dyrast.</p>
           <div style="display:flex; flex-wrap:wrap; gap:16px;">
             <a class="btn btn-primary" href="tel:+46722413887" style="font-size:16px; padding:14px 20px; min-width:260px; justify-content:flex-start; gap:12px;">Ring för konsultation<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+            <a class="btn btn-secondary" href="#kartlagg" style="font-size:16px; padding:14px 20px; min-width:260px; justify-content:flex-start; gap:12px;">Kartlägg ditt hus<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M12 5v14"></path><path d="m5 12 7 7 7-7"></path></svg></a>
           </div>
         </div>
       </div>
@@ -406,6 +446,105 @@ textarea.input { min-height: 90px; resize: vertical; }
         <div style="container-type:inline-size; width:100%; background:var(--color-surface); color:var(--color-text); font-family:var(--font-body);"><div style="padding:6cqw; display:flex; flex-direction:column; gap:5cqw;"><div style="display:flex; align-items:center; justify-content:space-between; gap:3cqw;"><div style="font-family:var(--font-heading); font-weight:800; font-size:7.5cqw; line-height:1; letter-spacing:-0.02em; flex:1; min-width:0;">Sänk värmen nu</div><span class="btn btn-secondary" style="font-size:2.8cqw; padding:1.4cqw 2.2cqw; gap:0.8cqw; cursor:default;">Veckan<svg style="width:2.8cqw; height:2.8cqw;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="square"><path d="m9 18 6-6-6-6"></path></svg></span></div><div style="display:grid; grid-template-columns:34cqw 20cqw 34cqw; grid-template-rows:auto 83cqw; row-gap:2.5cqw;"><div style="grid-column:1; grid-row:1; font-size:2.6cqw; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:color-mix(in srgb, var(--color-text) 70%, transparent);">Idag</div><div style="grid-column:3; grid-row:1; font-size:2.6cqw; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; color:color-mix(in srgb, var(--color-text) 70%, transparent);">Imorgon</div><div style="grid-column:1; grid-row:2; display:grid; grid-template-rows:repeat(3, 26cqw); row-gap:2.5cqw;"><div style="position:relative;"><div style="position:absolute; inset:0; background:oklch(0.62 0.2 33); color:var(--color-bg); padding:3cqw; display:flex; flex-direction:column; justify-content:space-between; align-items:flex-start;"><span style="background:var(--color-bg); color:var(--color-text); font-size:2.3cqw; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; padding:0.6cqw 1.4cqw; line-height:1.2;">Nu</span><span style="font-family:var(--font-heading); font-weight:800; font-size:8.5cqw; line-height:1; letter-spacing:-0.02em;">Röd</span></div></div><div style="position:relative;"><div style="position:absolute; inset:0; border:2px solid var(--color-divider); padding:3cqw; display:flex; align-items:flex-start; gap:1.4cqw;"><span style="width:2.2cqw; height:2.2cqw; margin-top:0.4cqw; flex:none; background:oklch(0.82 0.13 78);"></span><span style="font-size:3.2cqw; font-weight:600; line-height:1;">Gul</span></div></div><div style="position:relative;"><div style="position:absolute; inset:0; border:2px solid var(--color-divider); padding:3cqw; display:flex; align-items:flex-start; gap:1.4cqw;"><span style="width:2.2cqw; height:2.2cqw; margin-top:0.4cqw; flex:none; background:oklch(0.67 0.12 155);"></span><span style="font-size:3.2cqw; font-weight:600; line-height:1;">Grön</span></div></div></div><svg style="grid-column:2; grid-row:2; width:100%; height:100%; display:block;" viewBox="0 0 100 830" preserveAspectRatio="none"><defs><linearGradient id="flodeApp" x1="0" x2="1" y1="0" y2="0"><stop offset="0" style="stop-color:oklch(0.62 0.2 33);"></stop><stop offset="0.5" style="stop-color:oklch(0.82 0.13 78);"></stop><stop offset="1" style="stop-color:oklch(0.67 0.12 155);"></stop></linearGradient></defs><path d="M0 0 C55 0 45 570 100 570 L100 830 C45 830 55 260 0 260 Z" fill="url(#flodeApp)"></path></svg><div style="grid-column:3; grid-row:2; display:grid; grid-template-rows:repeat(3, 26cqw); row-gap:2.5cqw;"><div style="position:relative;"><div style="position:absolute; inset:0; border:2px solid var(--color-divider); padding:3cqw; display:flex; align-items:flex-start; gap:1.4cqw;"><span style="width:2.2cqw; height:2.2cqw; margin-top:0.4cqw; flex:none; background:oklch(0.62 0.2 33);"></span><span style="font-size:3.2cqw; font-weight:600; line-height:1;">Röd</span></div></div><div style="position:relative;"><div style="position:absolute; inset:0; border:2px solid var(--color-divider); padding:3cqw; display:flex; align-items:flex-start; gap:1.4cqw;"><span style="width:2.2cqw; height:2.2cqw; margin-top:0.4cqw; flex:none; background:oklch(0.82 0.13 78);"></span><span style="font-size:3.2cqw; font-weight:600; line-height:1;">Gul</span></div></div><div style="position:relative;"><div style="position:absolute; inset:0; background:oklch(0.67 0.12 155); color:var(--color-text); padding:3cqw; display:flex; flex-direction:column; justify-content:space-between; align-items:flex-start;"><span style="background:var(--color-bg); color:var(--color-text); font-size:2.3cqw; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; padding:0.6cqw 1.4cqw; line-height:1.2;">Prognos</span><span style="font-family:var(--font-heading); font-weight:800; font-size:8.5cqw; line-height:1; letter-spacing:-0.02em;">Grön</span></div></div></div></div></div></div>
       </div>
     </section>
+    <section id="kartlagg" style="border-top:2px solid var(--color-divider); padding:clamp(56px, 8vw, 88px) 0 clamp(64px, 8vw, 96px); display:flex; flex-wrap:wrap; gap:40px 72px; align-items:flex-start;">
+      <div style="flex:5 1 260px; display:flex; flex-direction:column; gap:20px;">
+        <h2 style="font-size:clamp(32px, 4vw, 44px); line-height:1.08; letter-spacing:-0.02em; margin:0;">Kartlägg ditt hus</h2>
+        <p style="font-size:18px; line-height:30px; margin:0; max-width:34ch; color:color-mix(in srgb, var(--color-text) 80%, transparent);">Fyra steg om huset, så ser du vad som går att styra. Det tar ett par minuter. Inget sparas på sidan, och svaren skickas bara om du själv mejlar dem.</p>
+      </div>
+      <div id="kl" class="kl" style="flex:7 1 400px; min-width:0; max-width:640px;">
+        <noscript><p style="font-size:18px; line-height:30px; margin:0;">Kartläggningen kräver JavaScript. Ring <a href="tel:+46722413887">072-241 38 87</a> eller mejla <a href="mailto:fredrik@sbkb.se">fredrik@sbkb.se</a>.</p></noscript>
+        <form id="kl-form" novalidate hidden>
+          <div id="kl-progwrap" class="kl-prog"><span id="kl-prog" aria-live="polite">Steg 1 av 4</span><span class="kl-barwrap"><span id="kl-bar"></span></span></div>
+
+          <fieldset class="kl-steg">
+            <legend>Vilken typ av byggnad?</legend>
+            <p class="kl-help">Välj ett alternativ.</p>
+            <div class="kl-opts">
+              <label class="kl-opt r"><input type="radio" name="bygg" value="villa" data-l="Villa">Villa</label>
+              <label class="kl-opt r"><input type="radio" name="bygg" value="flerbostadshus" data-l="Flerbostadshus">Flerbostadshus</label>
+              <label class="kl-opt r"><input type="radio" name="bygg" value="annat" data-l="Annat, till exempel fritidshus eller lokal">Annat, till exempel fritidshus eller lokal</label>
+            </div>
+            <div class="field">
+              <label for="kl-kvm">Boyta i kvadratmeter (valfritt)</label>
+              <input class="input" id="kl-kvm" inputmode="numeric" autocomplete="off" placeholder="till exempel 150">
+              <small class="kl-hint">Ungefär räcker. Lämna tomt om du inte vet.</small>
+            </div>
+          </fieldset>
+
+          <fieldset class="kl-steg" hidden>
+            <legend>Hur värms huset upp?</legend>
+            <p class="kl-help">Välj alla som gäller. Många hus har flera sätt.</p>
+            <div class="kl-opts">
+              <label class="kl-opt"><input type="checkbox" name="varme" value="varmepump" data-l="Värmepump">Värmepump</label>
+              <label class="kl-opt"><input type="checkbox" name="varme" value="direktel" data-l="Direktverkande el">Direktverkande el</label>
+              <label class="kl-opt"><input type="checkbox" name="varme" value="elpanna" data-l="Elpanna eller vattenburen el">Elpanna eller vattenburen el</label>
+              <label class="kl-opt"><input type="checkbox" name="varme" value="fjarrvarme" data-l="Fjärrvärme">Fjärrvärme</label>
+              <label class="kl-opt"><input type="checkbox" name="varme" value="ved" data-l="Ved eller pellets">Ved eller pellets (panna eller kamin)</label>
+              <label class="kl-opt"><input type="checkbox" name="varme" value="annat" data-l="Annat eller vet inte">Annat eller vet inte</label>
+            </div>
+          </fieldset>
+
+          <fieldset class="kl-steg" hidden>
+            <legend>Elavtal och förbrukning</legend>
+            <p class="kl-sub" id="kl-avtal-l">Vilket elavtal har du?</p>
+            <div class="kl-opts" role="radiogroup" aria-labelledby="kl-avtal-l">
+              <label class="kl-opt r"><input type="radio" name="avtal" value="timpris" data-l="Timpris"><span>Timpris<small>Priset ändras varje timme</small></span></label>
+              <label class="kl-opt r"><input type="radio" name="avtal" value="manadspris" data-l="Månadspris"><span>Månadspris<small>Ett rörligt pris per månad</small></span></label>
+              <label class="kl-opt r"><input type="radio" name="avtal" value="fast" data-l="Fast pris"><span>Fast pris<small>Samma pris hela avtalstiden</small></span></label>
+              <label class="kl-opt r"><input type="radio" name="avtal" value="vetej" data-l="Vet inte">Vet inte</label>
+            </div>
+            <div class="field">
+              <label for="kl-el">Elförbrukning per år, kWh (valfritt)</label>
+              <input class="input" id="kl-el" inputmode="numeric" autocomplete="off" placeholder="till exempel 18 000">
+              <small class="kl-hint">Står på elfakturan eller på nätbolagets Mina sidor. Lämna tomt om du inte vet.</small>
+            </div>
+            <div class="field" id="kl-fjv" hidden>
+              <label for="kl-fjvin">Fjärrvärme per år, kWh (valfritt)</label>
+              <input class="input" id="kl-fjvin" inputmode="numeric" autocomplete="off" placeholder="till exempel 12 000">
+              <small class="kl-hint">Står på fjärrvärmefakturan. Ange i kWh. Lämna tomt om du inte vet.</small>
+            </div>
+          </fieldset>
+
+          <fieldset class="kl-steg" hidden>
+            <legend>Vad mer drar el?</legend>
+            <p class="kl-help">Välj alla som gäller. Du kan hoppa över det här steget.</p>
+            <div class="kl-opts">
+              <label class="kl-opt"><input type="checkbox" name="annat" value="laddbox" data-l="Laddbox för elbil">Laddbox för elbil</label>
+              <label class="kl-opt"><input type="checkbox" name="annat" value="vvb" data-l="Varmvattenberedare med el">Varmvattenberedare med el</label>
+              <label class="kl-opt"><input type="checkbox" name="annat" value="sol" data-l="Solceller">Solceller</label>
+              <label class="kl-opt"><input type="checkbox" name="annat" value="mer" data-l="Annat som drar mycket el">Annat som drar mycket el</label>
+            </div>
+          </fieldset>
+
+          <p id="kl-err" class="kl-err" role="alert" hidden></p>
+          <div id="kl-nav" class="kl-nav">
+            <button type="button" id="kl-back" class="btn btn-secondary" hidden>Tillbaka</button>
+            <button type="button" id="kl-next" class="btn btn-primary"><span id="kl-nx">Nästa</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button>
+          </div>
+        </form>
+
+        <div id="kl-res" class="kl-res" hidden>
+          <h3 id="kl-res-h" tabindex="-1">Så ser det ut för ditt hus</h3>
+          <dl id="kl-sum" class="kl-sum"></dl>
+          <h4>Det här tittar vi på</h4>
+          <ul id="kl-do" class="kl-do"></ul>
+          <p class="kl-note">Det här är ingen offert och ingen beräkning. Vad som går att styra avgörs när vi har pratat och jag har sett huset.</p>
+          <div class="kl-nav">
+            <a id="kl-mail" class="btn btn-primary" href="mailto:fredrik@sbkb.se">Mejla mina svar</a>
+            <a class="btn btn-secondary" href="tel:+46722413887">Ring 072-241 38 87</a>
+          </div>
+          <div class="field">
+            <label for="kl-ta">Dina svar. Öppnas inget mejl, markera texten och kopiera den.</label>
+            <textarea id="kl-ta" class="input" readonly rows="11"></textarea>
+          </div>
+          <div class="kl-nav" style="margin-top:12px;">
+            <button type="button" id="kl-copy" class="btn btn-secondary">Kopiera svaren</button>
+            <button type="button" id="kl-om" class="btn btn-ghost">Börja om</button>
+            <span id="kl-copied" aria-live="polite" style="font-size:14px;"></span>
+          </div>
+        </div>
+      </div>
+    </section>
     <section style="border-top:2px solid var(--color-divider); padding:clamp(56px, 8vw, 88px) 0 clamp(72px, 9vw, 104px); display:flex; flex-wrap:wrap; gap:28px 72px; align-items:flex-start;">
       <h2 style="flex:5 1 260px; font-size:clamp(32px, 4vw, 44px); line-height:1.08; letter-spacing:-0.02em; margin:0;">Så jobbar jag</h2>
       <div style="flex:7 1 400px; display:flex; flex-direction:column; gap:20px; max-width:58ch;">
@@ -431,4 +570,202 @@ textarea.input { min-height: 90px; resize: vertical; }
 </div>
 
 
+<script>
+/* Kartläggning — körs helt i webbläsaren. Ingen lagring, inga cookies, ingen mätning. */
+(function () {
+  var f = document.getElementById('kl-form');
+  if (!f) return;
+  f.hidden = false;
+  var steg = f.querySelectorAll('.kl-steg'), N = steg.length, cur = 0;
+  var box = document.getElementById('kl');
+  var res = document.getElementById('kl-res');
+  var err = document.getElementById('kl-err');
+  var back = document.getElementById('kl-back'), next = document.getElementById('kl-next');
+  var nx = document.getElementById('kl-nx');
+  var prog = document.getElementById('kl-prog'), bar = document.getElementById('kl-bar');
+  var progwrap = document.getElementById('kl-progwrap'), nav = document.getElementById('kl-nav');
+  var fjv = document.getElementById('kl-fjv');
+  var ta = document.getElementById('kl-ta'), mail = document.getElementById('kl-mail');
+  var copied = document.getElementById('kl-copied');
+
+  function checked(n) { return f.querySelectorAll('input[name="' + n + '"]:checked'); }
+  function labels(n) { return Array.prototype.map.call(checked(n), function (i) { return i.getAttribute('data-l'); }); }
+  function vals(n) { return Array.prototype.map.call(checked(n), function (i) { return i.value; }); }
+  function one(n) { var l = labels(n); return l.length ? l[0] : ''; }
+
+  // "18 000", "18000", "18.000" och "150,5" tolkas; allt annat blir tomt
+  function num(id) {
+    var s = (document.getElementById(id).value || '').replace(/[\s ]/g, '');
+    if (/^\d{1,3}(\.\d{3})+(,\d+)?$/.test(s)) s = s.replace(/\./g, '');
+    s = s.replace(',', '.');
+    var v = parseFloat(s);
+    return (isFinite(v) && v > 0) ? Math.round(v) : null;
+  }
+  function fmt(v) { return String(v).replace(/\B(?=(\d{3})+(?!\d))/g, ' '); }
+
+  function sync() {
+    Array.prototype.forEach.call(f.querySelectorAll('.kl-opt'), function (l) {
+      l.classList.toggle('on', l.querySelector('input').checked);
+    });
+  }
+
+  function inView() {
+    var r = box.getBoundingClientRect();
+    if (r.top < 0 || r.top > window.innerHeight * 0.6) box.scrollIntoView({ block: 'start' });
+  }
+
+  function show(i, fokus) {
+    cur = i;
+    for (var k = 0; k < N; k++) steg[k].hidden = (k !== i);
+    prog.textContent = 'Steg ' + (i + 1) + ' av ' + N;
+    bar.style.width = ((i + 1) / N * 100) + '%';
+    back.hidden = (i === 0);
+    nx.textContent = (i === N - 1) ? 'Visa resultat' : 'Nästa';
+    err.hidden = true;
+    if (i === 2) fjv.hidden = vals('varme').indexOf('fjarrvarme') < 0;
+    if (fokus) {
+      var lg = steg[i].querySelector('legend');
+      lg.setAttribute('tabindex', '-1');
+      lg.focus({ preventScroll: true });
+      inView();
+    }
+  }
+
+  function kontroll(i) {
+    var m = '';
+    if (i === 0 && !checked('bygg').length) m = 'Välj vilken typ av byggnad det gäller.';
+    if (i === 1 && !checked('varme').length) m = 'Välj minst ett alternativ. Passar inget, välj «Annat eller vet inte».';
+    if (i === 2 && !checked('avtal').length) m = 'Välj elavtal. Vet du inte, välj «Vet inte».';
+    if (m) { err.textContent = m; err.hidden = false; return false; }
+    err.hidden = true;
+    return true;
+  }
+
+  function rader() {
+    var varme = vals('varme');
+    var r = [];
+    r.push(['Byggnad', one('bygg')]);
+    var kvm = num('kl-kvm');
+    r.push(['Boyta', kvm ? fmt(kvm) + ' kvm' : 'Ej angiven']);
+    r.push(['Uppvärmning', labels('varme').join(', ')]);
+    r.push(['Elavtal', one('avtal')]);
+    var el = num('kl-el');
+    r.push(['Elförbrukning per år', el ? fmt(el) + ' kWh' : 'Ej angiven']);
+    if (varme.indexOf('fjarrvarme') >= 0) {
+      var fv = num('kl-fjvin');
+      r.push(['Fjärrvärme per år', fv ? fmt(fv) + ' kWh' : 'Ej angiven']);
+    }
+    var an = labels('annat');
+    r.push(['Annat som drar el', an.length ? an.join(', ') : 'Inget angett']);
+    return r;
+  }
+
+  function tittar() {
+    var t = [];
+    var bygg = vals('bygg')[0];
+    var varme = vals('varme');
+    var annat = vals('annat');
+    var avtal = vals('avtal')[0];
+    if (bygg !== 'villa') {
+      t.push(['Flerbostadshus och andra byggnader', 'Det går vi igenom i ett samtal, eftersom det beror på vad som finns i byggnaden. Ring eller mejla.']);
+    }
+    if (varme.indexOf('varmepump') >= 0) t.push(['Värmepump', 'Den kan styras efter elpriset. Vi tittar på om din går att koppla upp och om det går att följa innetemperaturen.']);
+    if (varme.indexOf('direktel') >= 0) t.push(['Direktverkande el', 'Värmen drivs av el och kan styras efter elpriset. Hur, beror på vilka reglage som finns.']);
+    if (varme.indexOf('elpanna') >= 0) t.push(['Elpanna eller vattenburen el', 'Den drivs av el och kan styras efter elpriset. Vi går igenom vad som finns i pannan.']);
+    if (varme.indexOf('fjarrvarme') >= 0) t.push(['Fjärrvärme', 'Hur den prissätts och vad som går att göra går vi igenom när vi pratar. Det beror på fjärrvärmebolaget.']);
+    if (varme.indexOf('ved') >= 0) t.push(['Ved eller pellets', 'Du kan få en signal när det är dags att elda, om elen är dyr.']);
+    if (varme.indexOf('annat') >= 0) t.push(['Annat sätt att värma', 'Det tar vi i samtalet.']);
+    if (annat.indexOf('laddbox') >= 0) t.push(['Laddbox', 'Laddningen kan vänta tills elen är billigare.']);
+    if (annat.indexOf('vvb') >= 0) t.push(['Varmvattenberedare', 'Den kan pausas när elen är dyr.']);
+    if (annat.indexOf('sol') >= 0) t.push(['Solceller', 'Vi tar med dem när vi går igenom husets el.']);
+    if (annat.indexOf('mer') >= 0) t.push(['Annat som drar mycket el', 'Det tar vi i samtalet.']);
+    if (avtal === 'timpris') t.push(['Timpris', 'Du betalar elpriset för varje timme, så det är värt att flytta förbrukning till de billiga timmarna.']);
+    if (avtal === 'manadspris' || avtal === 'fast') t.push([avtal === 'fast' ? 'Fast pris' : 'Månadspris', 'Du betalar lika mycket oavsett timme, så att flytta förbrukning mellan timmar ändrar inte elkostnaden. Då är det andra saker än elpriset som avgör vad styrning ger. Det går vi igenom i samtalet.']);
+    if (avtal === 'vetej') t.push(['Elavtal', 'Titta på elfakturan efter ordet timpris, månadspris eller fast pris. Det avgör vad styrning kan ge, och vi tar det i samtalet.']);
+    return t;
+  }
+
+  function kalla() {
+    try {
+      var s = new URLSearchParams(window.location.search).get('src');
+      if (s && /^[A-Za-z0-9_-]{1,24}$/.test(s)) return s;
+    } catch (e) {}
+    return '';
+  }
+
+  function resultat() {
+    var r = rader();
+    var dl = document.getElementById('kl-sum');
+    dl.textContent = '';
+    r.forEach(function (x) {
+      var d = document.createElement('div');
+      var dt = document.createElement('dt'); dt.textContent = x[0];
+      var dd = document.createElement('dd'); dd.textContent = x[1];
+      d.appendChild(dt); d.appendChild(dd); dl.appendChild(d);
+    });
+    var ul = document.getElementById('kl-do');
+    ul.textContent = '';
+    tittar().forEach(function (x) {
+      var li = document.createElement('li');
+      var b = document.createElement('strong'); b.textContent = x[0] + '. ';
+      li.appendChild(b); li.appendChild(document.createTextNode(x[1]));
+      ul.appendChild(li);
+    });
+    var src = kalla();
+    var body = 'Hej Fredrik,\r\n\r\nJag har fyllt i kartläggningen på sbkb.se/energistyrning.\r\n\r\n' +
+      r.map(function (x) { return x[0] + ': ' + x[1]; }).join('\r\n') +
+      (src ? '\r\n\r\nKälla: ' + src : '') +
+      '\r\n\r\nMitt namn och telefonnummer:\r\n';
+    ta.value = body;
+    mail.href = 'mailto:fredrik@sbkb.se?subject=' + encodeURIComponent('Kartläggning Energistyrning') + '&body=' + encodeURIComponent(body);
+    f.hidden = true;
+    res.hidden = false;
+    copied.textContent = '';
+    var h = document.getElementById('kl-res-h');
+    h.focus({ preventScroll: true });
+    inView();
+  }
+
+  next.addEventListener('click', function () {
+    if (!kontroll(cur)) return;
+    if (cur === N - 1) resultat(); else show(cur + 1, true);
+  });
+  back.addEventListener('click', function () { if (cur > 0) show(cur - 1, true); });
+  f.addEventListener('change', sync);
+  f.addEventListener('submit', function (e) { e.preventDefault(); });
+  f.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' && e.target && e.target.tagName === 'INPUT' && e.target.type === 'text') {
+      e.preventDefault();
+      next.click();
+    }
+  });
+
+  document.getElementById('kl-om').addEventListener('click', function () {
+    f.reset();
+    sync();
+    res.hidden = true;
+    f.hidden = false;
+    show(0, true);
+  });
+
+  document.getElementById('kl-copy').addEventListener('click', function () {
+    function klart() { copied.textContent = 'Kopierat.'; }
+    function manuellt() {
+      ta.focus(); ta.select();
+      try { ta.setSelectionRange(0, ta.value.length); } catch (e) {}
+      try { if (document.execCommand('copy')) { klart(); return; } } catch (e) {}
+      copied.textContent = 'Markera texten och kopiera den.';
+    }
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(ta.value).then(klart, manuellt);
+        return;
+      }
+    } catch (e) {}
+    manuellt();
+  });
+
+  show(0, false);
+})();
+</script>
 </body></html>
