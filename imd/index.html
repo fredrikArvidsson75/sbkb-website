@@ -448,7 +448,7 @@ textarea.input { min-height: 90px; resize: vertical; }
     <section style="border-top:2px solid var(--color-divider); padding:clamp(56px, 8vw, 88px) 0 clamp(64px, 8vw, 96px); display:flex; flex-wrap:wrap; gap:28px 72px; align-items:flex-start;">
       <h2 style="flex:5 1 260px; font-size:clamp(32px, 4vw, 44px); line-height:1.08; letter-spacing:-0.02em; margin:0;">Nätet dras en gång</h2>
       <div style="flex:7 1 400px; display:flex; flex-direction:column; gap:20px; max-width:58ch;">
-        <p style="font-size:18px; line-height:30px; margin:0; text-wrap:pretty;">Mätarna kopplas på M-Bus, en standard som hanterar el, vatten och värme på samma buss och samma insamlingsenhet. Nätet dras en gång. Därefter kan vattenmätare och temperaturgivare läggas till utan ny infrastruktur.</p>
+        <p style="font-size:18px; line-height:30px; margin:0; text-wrap:pretty;">Mätarna kopplas på M-Bus, en standard som hanterar el, vatten och värme på samma buss och samma insamlingsenhet. Nätet dras en gång. Därefter kan vattenmätare och temperaturgivare läggas till utan ny infrastruktur. Systemet behöver bara veta varje mätares adress, var den sitter och vad den ska mäta. Kabeln är densamma oavsett om mätaren mäter el, vatten eller värme, så nätet kan dras för fler mätare än de som sätts dit först.</p>
         <p style="font-size:18px; line-height:30px; margin:0; text-wrap:pretty;">I ett flerbostadshus kan lägenheternas elabonnemang ersättas av ett gemensamt. Då är det antalet abonnemang som gör skillnaden, inte själva mätningen. I radhus, parhus och kedjehus gäller andra regler. Där kan gemensam el kräva nätkoncession, och där tittar vi först på vatten och laddplatser.</p>
         <p style="font-size:18px; line-height:30px; margin:0; text-wrap:pretty;">IMD el och IMD kallvatten omfattas inte av lagkraven. IMD värme och varmvatten gör det i vissa fall: i nybyggnad, vid väsentlig ändring av installationerna för tappvarmvatten, och för flerbostadshus med ett primärenergital över 200 kWh/m² Atemp och år. Kartläggningen visar vad som gäller i er förening.</p>
       </div>
@@ -509,6 +509,12 @@ textarea.input { min-height: 90px; resize: vertical; }
               <label class="kl-opt r"><input type="radio" name="elab" value="egna" data-l="Varje lägenhet har eget elabonnemang">Varje lägenhet har eget elabonnemang<small>Och föreningen har ett för fastighetens el</small></label>
               <label class="kl-opt r"><input type="radio" name="elab" value="gemensam" data-l="Föreningen har ett gemensamt abonnemang för all el">Föreningen har ett gemensamt abonnemang för all el</label>
               <label class="kl-opt r"><input type="radio" name="elab" value="vetej" data-l="Vet inte eller blandat">Vet inte eller blandat<small>En mycket låg elpost i årsredovisningen tyder på egna abonnemang</small></label>
+            </div>
+            <p class="kl-sub" style="margin-top:24px;">Var sitter elmätarna idag?</p>
+            <div class="kl-opts">
+              <label class="kl-opt r"><input type="radio" name="matplats" value="samlade" data-l="Samlade på ett ställe, till exempel i källargången">Samlade på ett ställe<small>Till exempel i källargången eller ett mätarrum</small></label>
+              <label class="kl-opt r"><input type="radio" name="matplats" value="lgh" data-l="I varje lägenhet">I varje lägenhet</label>
+              <label class="kl-opt r"><input type="radio" name="matplats" value="vetej" data-l="Vet inte">Vet inte</label>
             </div>
             <div class="field">
               <label for="kl-handlare">Föreningens elhandlare (valfritt)</label>
@@ -724,6 +730,7 @@ textarea.input { min-height: 90px; resize: vertical; }
     r.push(['Ska mätas', labels('mat').join(', ')]);
     if (vals('finns').length) r.push(['Mätning finns redan', 'Ja']);
     r.push(['El idag', one('elab')]);
+    r.push(['Elmätarnas placering', one('matplats') || 'Ej angiven']);
     var h = txt('kl-handlare'), nt = txt('kl-nat');
     r.push(['Elhandlare', h || 'Ej angiven']);
     r.push(['Nätbolag', nt || 'Ej angivet']);
@@ -805,6 +812,11 @@ textarea.input { min-height: 90px; resize: vertical; }
       t.push(['Blandad bebyggelse', 'Flerbostadshus och radhus bedöms var för sig, eftersom undantaget för internt elnät gäller inom en byggnad.']);
     }
 
+    var mp = vals('matplats')[0];
+    if (mp === 'samlade') t.push(['Elmätarna sitter samlade', 'Bytet av elmätare görs på ett ställe, till exempel i källargången.' + ((har('kv') || har('vv') || har('temp')) ? ' Vattenmätare och temperaturgivare sitter i varje lägenhet och är det större arbetet.' : '')]);
+    else if (mp === 'lgh') t.push(['Elmätarna sitter i lägenheterna', 'Bytet kräver tillträde till varje lägenhet. Om befintliga mätarplatser kan användas eller nya behövs avgörs vid platsbesök.']);
+    else if (mp === 'vetej') t.push(['Elmätarnas placering', 'Ta reda på om elmätarna sitter samlade på ett ställe eller i varje lägenhet. Det avgör hur mycket av elbytet som kräver tillträde till lägenheterna.']);
+    if (har('el') && !har('kv') && !har('vv') && !har('temp')) t.push(['Förbered för fler mätare', 'Nätet kan dras för fler mätare än de som sätts dit först. Varje mätare får en adress i systemet, och kabeln är densamma oavsett om mätaren mäter el, vatten eller värme. Vatten och temperatur kan kopplas på senare utan ny infrastruktur.']);
     if (har('el') || fler) {
       if (fler && elab === 'egna') t.push(['El', 'Med gemensam el ersätts lägenheternas elabonnemang av ett. Det minskar antalet fasta nätavgifter, och mätare i varje lägenhet fördelar kostnaden. Hur mycket det blir i kronor beror på nätbolagets avgifter och föreningens avtal, som vi tittar på i utredningen.']);
       else if (fler && elab === 'gemensam') t.push(['El', 'Ni har redan ett gemensamt abonnemang. Då ändrar mätning per lägenhet hur kostnaden fördelas, men inte antalet abonnemang.']);
