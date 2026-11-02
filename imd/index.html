@@ -557,6 +557,13 @@ textarea.input { min-height: 90px; resize: vertical; }
               <label class="kl-opt r"><input type="radio" name="vv" value="lokal" data-l="I varje bostad, egen beredare">I varje bostad<small>Egen beredare i varje lägenhet eller hus</small></label>
               <label class="kl-opt r"><input type="radio" name="vv" value="vetej" data-l="Vet inte">Vet inte</label>
             </div>
+            <p class="kl-sub" style="margin-top:24px;">Hur många vattenstammar har varje bostad?</p>
+            <p class="kl-help" style="margin-bottom:12px;">Kolla var vattnet kommer in. Kök och badrum kan ha varsin stam, med egen kall- och varmvattenledning.</p>
+            <div class="kl-opts">
+              <label class="kl-opt r"><input type="radio" name="stam" value="tva" data-l="Två stammar, en vid köket och en vid badrummet">Två stammar<small>En vid köket och en vid badrummet, varsin kall- och varmvattenledning</small></label>
+              <label class="kl-opt r"><input type="radio" name="stam" value="en" data-l="En stam, kök och badrum på samma">En stam<small>Kök och badrum på samma ledningar</small></label>
+              <label class="kl-opt r"><input type="radio" name="stam" value="vetej" data-l="Vet inte">Vet inte</label>
+            </div>
             <p class="kl-sub" style="margin-top:24px;">Hur är vattnet ordnat?</p>
             <div class="kl-opts">
               <label class="kl-opt r"><input type="radio" name="va" value="gemensamt" data-l="Gemensamt vattenabonnemang, vattnet ingår i avgiften">Gemensamt vattenabonnemang<small>Vattnet ingår i månadsavgiften</small></label>
@@ -730,6 +737,7 @@ textarea.input { min-height: 90px; resize: vertical; }
       r.push(['Fjärrvärme per år', fv ? fmt(fv) + ' kWh' : 'Ej angiven']);
     }
     r.push(['Varmvatten', one('vv') || 'Ej angivet']);
+    r.push(['Vattenstammar per bostad', one('stam') || 'Ej angivet']);
     r.push(['Vatten', one('va') || 'Ej angivet']);
     r.push(['Vatten- och avloppsbolag', txt('kl-vabolag') || 'Ej angivet']);
     var vi = num('kl-vain');
@@ -740,9 +748,15 @@ textarea.input { min-height: 90px; resize: vertical; }
   // Antal mätpunkter, räknat på antal lägenheter. Återger bara aritmetik, inga kronor.
   function punkter() {
     var lgh = num('kl-lgh');
-    var bygg = vals('bygg')[0], mat = vals('mat'), vv = vals('vv')[0];
+    var bygg = vals('bygg')[0], mat = vals('mat'), vv = vals('vv')[0], st = vals('stam')[0];
     var har = function (x) { return mat.indexOf(x) >= 0; };
     var rad = [], lo = 0, hi = 0;
+    // vattenmätare per bostad: antalet stammar anger ett exakt tal, annars ett spann
+    function vatten(namn, extra) {
+      if (st === 'tva') lagg(namn, 2 * lgh, 2 * lgh, fmt(2 * lgh) + ', två per lägenhet (en per stam)');
+      else if (st === 'en') lagg(namn, lgh, lgh, fmt(lgh) + ', en per lägenhet');
+      else lagg(namn, lgh, 2 * lgh, fmt(lgh) + '–' + fmt(2 * lgh) + ', en eller två per lägenhet beroende på antal stammar' + (extra || ''));
+    }
     function lagg(namn, a, b, text) {
       rad.push([namn, text]);
       lo += a; hi += b;
@@ -753,11 +767,11 @@ textarea.input { min-height: 90px; resize: vertical; }
     }
     if (har('kv')) {
       if (vv === 'lokal') lagg('Kallvattenmätare', lgh, lgh, fmt(lgh) + ', en per bostad');
-      else lagg('Kallvattenmätare', lgh, 2 * lgh, fmt(lgh) + '–' + fmt(2 * lgh) + ', en eller två per lägenhet beroende på antal stammar');
+      else vatten('Kallvattenmätare');
     }
     if (har('vv')) {
       if (vv === 'lokal') rad.push(['Varmvattenmätare', 'Behövs normalt inte. Varmvattnet bereds i varje bostad och energin betalas på bostadens elabonnemang']);
-      else lagg('Varmvattenmätare', lgh, 2 * lgh, fmt(lgh) + '–' + fmt(2 * lgh) + (vv === 'vetej' ? ', om varmvattnet görs centralt' : ', en eller två per lägenhet beroende på antal stammar'));
+      else vatten('Varmvattenmätare', vv === 'vetej' ? ', om varmvattnet görs centralt' : '');
     }
     if (har('temp')) lagg('Temperaturgivare', lgh, lgh, fmt(lgh) + ', en per lägenhet');
     if (har('varme')) rad.push(['Värmemätare', 'Antalet beror på hur värmen är dragen i husen']);
@@ -773,7 +787,7 @@ textarea.input { min-height: 90px; resize: vertical; }
   function tittar() {
     var t = [];
     var bygg = vals('bygg')[0], mat = vals('mat'), elab = vals('elab')[0];
-    var va = vals('va')[0], vv = vals('vv')[0], avtal = vals('avtal')[0];
+    var va = vals('va')[0], vv = vals('vv')[0], avtal = vals('avtal')[0], stam = vals('stam')[0];
     var nb = num('kl-nbyg');
     var har = function (x) { return mat.indexOf(x) >= 0; };
     var fler = (bygg === 'flerbostadshus');
@@ -807,10 +821,11 @@ textarea.input { min-height: 90px; resize: vertical; }
       else if (va === 'egna') t.push(['Vatten', 'Har varje bostad eget vattenabonnemang betalar varje hushåll redan för sin förbrukning. Då finns inget att fördela och vattenspåret faller bort.']);
       else t.push(['Vatten', 'Kontrollera VA-fakturan: är det ett gemensamt abonnemang för hela föreningen? Svaret avgör om vattenspåret finns.']);
     }
+    if (stam === 'tva' && (har('kv') || har('vv')) && vv !== 'lokal') t.push(['Antalet mätare styr arbetet', 'Varje mätare behöver kabel till insamlingsenheten och ska registreras i systemet. Med två stammar blir det fyra kabeldragningar och fyra registreringar per lägenhet, mot en för elen.']);
     if (har('kv') && vv === 'lokal') t.push(['Kallvatten i radhus och hus med egen beredare', 'Bereds varmvattnet i varje bostad räcker en kallvattenmätare per bostad. Hushållet betalar redan energin för varmvattnet på sitt elabonnemang.']);
     if (har('vv')) {
       if (vv === 'lokal') t.push(['Varmvatten', 'Bereds varmvattnet i varje bostad betalas energin redan på bostadens elabonnemang, och ingen separat varmvattenmätning behövs för den.']);
-      else t.push(['Varmvatten', 'Mätning kräver mätare på både kall- och varmvattenstammen. Har lägenheten två stammar, till exempel kök och badrum, blir det upp till fyra mätare per lägenhet. Lagen kräver IMD för tappvarmvatten i nybyggnad sedan 2022-06-01 och vid väsentlig ändring av installationerna för tappvarmvatten, till exempel stambyte. Kravet gäller inte om det är tekniskt ogenomförbart eller olönsamt.']);
+      else t.push(['Varmvatten', 'Mätning kräver mätare på både kall- och varmvattenstammen. ' + (stam === 'tva' ? 'Lägenheten har två stammar, en vid köket och en vid badrummet, och det blir fyra mätare per lägenhet: två för kallvatten och två för varmvatten. ' : stam === 'en' ? 'Lägenheten har en stam, och det blir två mätare per lägenhet. ' : 'Har lägenheten två stammar, till exempel kök och badrum, blir det fyra mätare per lägenhet. ') + 'Lagen kräver IMD för tappvarmvatten i nybyggnad sedan 2022-06-01 och vid väsentlig ändring av installationerna för tappvarmvatten, till exempel stambyte. Kravet gäller inte om det är tekniskt ogenomförbart eller olönsamt.']);
     }
     if (har('varme')) t.push(['Värme', 'IMD värme är krav för flerbostadshus med ett primärenergital över 200 kWh/m² Atemp och år. Primärenergitalet står i energideklarationen. Kravet gäller inte om installationen är tekniskt ogenomförbar eller olönsam.']);
     if (har('temp')) t.push(['Temperatur', 'En rumsgivare per lägenhet, trådad och dragen i samma arbetsmoment som vattenmätarna. Trådlösa givare med batteri blir en förvaltningspost: batterier ska bytas hos medlemmen och givare tappas bort eller flyttas.']);
@@ -844,7 +859,10 @@ textarea.input { min-height: 90px; resize: vertical; }
     fyll('kl-sum', r);
     var p = punkter();
     fyll('kl-pkt', p);
-    document.getElementById('kl-pkt-note').textContent = 'Räknat på antal lägenheter och ska kontrolleras på plats. Antalet stammar per lägenhet avgör antalet vattenmätare.';
+    var stv = vals('stam')[0];
+    document.getElementById('kl-pkt-note').textContent = (stv === 'tva' || stv === 'en')
+      ? 'Räknat på antal lägenheter och det ni angav om vattenstammar. Ska kontrolleras på plats.'
+      : 'Räknat på antal lägenheter och ska kontrolleras på plats. Antalet stammar per lägenhet avgör antalet vattenmätare.';
     var ul = document.getElementById('kl-do');
     ul.textContent = '';
     tittar().forEach(function (x) {
