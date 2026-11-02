@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="sv"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Individuell mätning och debitering – SBKB, Södra Bohusläns konsultbyrå</title>
+<meta name="description" content="Kartlägg bostadsrättsföreningen för individuell mätning och debitering, IMD: antal lägenheter, vilka mätslag, elavtal och leverantörer. Testsida.">
+<meta name="robots" content="noindex, nofollow">
+<style>/* Modernist — design-system tokens and component classes. This file is the source of truth for the system's look; retune it here and see readme.md. */
+/* vietnamese */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("../assets/fonts/archivo-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("../assets/fonts/archivo-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("../assets/fonts/archivo-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("../assets/fonts/archivo-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("../assets/fonts/archivo-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("../assets/fonts/archivo-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 800;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("../assets/fonts/archivo-vietnamese.woff2") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 800;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("../assets/fonts/archivo-latin-ext.woff2") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 800;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url("../assets/fonts/archivo-latin.woff2") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+
+:root {
+  --color-bg: #f3f2f2;
+  --color-surface: #eae9e9;
+  --color-text: #201e1d;
+  --color-accent: #ec3013;
+  --color-accent-2: #e15b47;
+  --color-divider: color-mix(in srgb, #201e1d 40%, transparent);
+
+  /* Tonal ramps — generated in OKLCH on one shared lightness scale, so the
+     same step of any role matches the others in visual value. */
+  --color-neutral-100: #f8f4f4;
+  --color-neutral-200: #eae7e7;
+  --color-neutral-300: #d7d3d3;
+  --color-neutral-400: #bab6b6;
+  --color-neutral-500: #9b9797;
+  --color-neutral-600: #7d7979;
+  --color-neutral-700: #605d5d;
+  --color-neutral-800: #444141;
+  --color-neutral-900: #2d2b2b;
+
+  --color-accent-100: #fff2ef;
+  --color-accent-200: #ffe0d9;
+  --color-accent-300: #ffc4b8;
+  --color-accent-400: #ff9783;
+  --color-accent-500: #ff563c;
+  --color-accent-600: #dd2b0f;
+  --color-accent-700: #ae1800;
+  --color-accent-800: #7c1405;
+  --color-accent-900: #4d170e;
+
+  --color-accent-2-100: #fff2ef;
+  --color-accent-2-200: #ffe0da;
+  --color-accent-2-300: #ffc4b9;
+  --color-accent-2-400: #ff9784;
+  --color-accent-2-500: #ef6853;
+  --color-accent-2-600: #c94b39;
+  --color-accent-2-700: #9e3526;
+  --color-accent-2-800: #71261b;
+  --color-accent-2-900: #471d16;
+
+  --font-heading: "Archivo", system-ui, sans-serif;
+  --font-heading-weight: 800;
+  --font-body: "Archivo", system-ui, sans-serif;
+
+  --space-1: 4.0px;
+  --space-2: 8.0px;
+  --space-3: 12.0px;
+  --space-4: 16.0px;
+  --space-6: 24.0px;
+  --space-8: 32.0px;
+
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+
+  /* Elevation — derived from the ground: soft ink-tinted shadows on a
+     light theme, a hairline edge + ambient darkness on a dark one. */
+  --shadow-sm: 0 1px 2px color-mix(in srgb, #2d2b2b 14%, transparent);
+  --shadow-md: 0 3px 10px color-mix(in srgb, #2d2b2b 16%, transparent);
+  --shadow-lg: 0 12px 32px color-mix(in srgb, #2d2b2b 22%, transparent);
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: var(--font-heading-weight); }
+
+.grayscale{filter:grayscale(1) contrast(1.08)}
+
+/* ══════════════════════════════════════════════════════════════════════════
+   Components — built with the tokens above. Plain CSS
+   on plain HTML: no JavaScript, no build step. Each class is documented in
+   readme.md and demonstrated in foundations/ and components/.
+   ══════════════════════════════════════════════════════════════════════ */
+
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-size: 15px; line-height: 1.55; font-weight: 400; }
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  line-height: 1.12; letter-spacing: -0.015em; margin: 0 0 var(--space-2);
+}
+h1 { font-size: 42px; }
+h2 { font-size: 32px; }
+h3 { font-size: 25px; }
+h4 { font-size: 20px; }
+h5 { font-size: 16px; }
+h6 { font-size: 13px; }
+h6 { letter-spacing: 0.08em; text-transform: uppercase; }
+p { margin: 0 0 var(--space-3); }
+a { color: var(--color-accent); text-underline-offset: 3px; }
+img { display: block; max-width: 100%; }
+figure { margin: 0; }
+figcaption {
+  font-size: 11px; margin-top: var(--space-1);
+  color: color-mix(in srgb, var(--color-text) 55%, transparent);
+}
+.text-muted { color: color-mix(in srgb, var(--color-text) 55%, transparent); }
+:focus { outline: none; }
+:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+::selection { background: color-mix(in srgb, var(--color-accent) 30%, transparent); }
+
+/* — rules — */
+.hr {
+  height: 2px; border: 0; margin: var(--space-4) 0;
+  background: var(--color-divider);
+}
+
+/* — buttons — */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+  cursor: pointer; text-decoration: none;
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 14px; line-height: 1.2; color: var(--color-text); /* matches the .input's 14px —
+     the pair sits side by side in sign-up rows */
+  background: transparent; border: 1px solid transparent;
+  padding: var(--space-2) calc(var(--space-3) * 1.2);
+  border-radius: var(--radius-md);
+}
+.btn svg { display: block; }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+.btn-primary { background: var(--color-accent); color: var(--color-bg); }
+.btn-primary:hover { background: var(--color-accent-600); }
+.btn-primary:active { background: var(--color-accent-700); }
+.btn-secondary { border-color: var(--color-divider); }
+.btn-secondary:hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
+.btn-secondary:active { background: color-mix(in srgb, var(--color-text) 14%, transparent); }
+.btn-ghost { color: var(--color-accent); padding-inline: var(--space-1); }
+.btn-ghost:hover { background: color-mix(in srgb, var(--color-accent) 10%, transparent); }
+.btn-ghost:active { background: color-mix(in srgb, var(--color-accent) 18%, transparent); }
+.btn-icon { width: 36px; height: 36px; padding: 0; }
+.btn-block { width: 100%; margin-top: var(--space-2); justify-content: flex-start; text-align: left; }
+
+/* — forms — */
+.field > label {
+  display: block; font-size: 12px; margin-bottom: 5px;
+  color: color-mix(in srgb, var(--color-text) 70%, transparent);
+}
+.input {
+  width: 100%; min-height: 36px; padding: 6px 10px; font: inherit;
+  font-size: 14px; color: var(--color-text); caret-color: var(--color-accent);
+  background: var(--color-surface);
+  border: 1px solid var(--color-divider); border-radius: var(--radius-md);
+}
+.input:hover { border-color: color-mix(in srgb, var(--color-text) 45%, transparent); }
+.input:focus-visible { border-color: var(--color-accent); outline-offset: 0; }
+textarea.input { min-height: 90px; resize: vertical; }
+.radio { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-size: 14px; }
+.radio input, .seg-opt input {
+  position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none;
+}
+.radio .dot {
+  width: 16px; height: 16px; flex: none; border-radius: 50%;
+  border: 1.5px solid var(--color-divider);
+}
+.radio:hover .dot { border-color: var(--color-accent); }
+.radio input:checked + .dot {
+  border-color: var(--color-accent); background: var(--color-accent);
+  box-shadow: inset 0 0 0 4px var(--color-bg);
+}
+.radio input:focus-visible + .dot { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.seg {
+  display: inline-flex; overflow: hidden;
+  border: 1px solid var(--color-divider); border-radius: var(--radius-md);
+}
+.seg-opt {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 12px; font-size: 13px; cursor: pointer;
+}
+.seg-opt + .seg-opt { border-left: 1px solid var(--color-divider); }
+.seg-opt:has(input:checked) { background: var(--color-accent); color: var(--color-bg); }
+.seg-opt:not(:has(input:checked)):hover { background: color-mix(in srgb, var(--color-text) 7%, transparent); }
+.seg-opt:has(input:focus-visible) { outline: 2px solid var(--color-accent); outline-offset: -2px; }
+
+/* — cards — */
+.card {
+  display: flex; flex-direction: column; gap: var(--space-2);
+  padding: var(--space-3); border-radius: var(--radius-md); background: var(--color-surface);
+}
+.card-kicker { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-accent); }
+.card-title {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 17px; line-height: 1.2;
+}
+.card-body { margin: 0; font-size: 13px; opacity: 0.8; flex: 1; }
+.card-meta {
+  display: flex; align-items: center; gap: 6px; font-size: 11px;
+  color: color-mix(in srgb, var(--color-text) 50%, transparent);
+}
+.elev-sm { box-shadow: var(--shadow-sm); }
+.elev-md { box-shadow: var(--shadow-md); }
+.elev-lg { box-shadow: var(--shadow-lg); }
+
+/* — tags — */
+.tag {
+  display: inline-flex; align-items: center; font-size: 11px;
+  letter-spacing: 0.02em; padding: 3px 10px;
+  border-radius: calc(var(--radius-md) * 0.75);
+}
+.tag-accent { background: var(--color-accent-100); color: var(--color-accent-800); }
+.tag-accent-2 { background: var(--color-accent-2-100); color: var(--color-accent-2-800); }
+.tag-neutral { background: var(--color-neutral-100); color: var(--color-neutral-800); }
+.tag-outline { border: 1px solid var(--color-accent); color: var(--color-accent); }
+
+/* — navigation — */
+.nav {
+  display: flex; align-items: center; gap: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 2px solid var(--color-divider);
+}
+.nav-brand {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 18px; margin-right: auto;
+}
+.nav a { color: inherit; text-decoration: none; font-size: 14px; }
+.nav a:hover, .nav a[aria-current='page'] { color: var(--color-accent); }
+
+/* — tables — */
+.table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.table th {
+  text-align: left; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-text) 60%, transparent);
+  padding: var(--space-2); border-bottom: 2px solid var(--color-divider);
+}
+.table td {
+  padding: var(--space-2);
+  border-bottom: 1px solid var(--color-divider);
+}
+.table tbody tr:hover { background: color-mix(in srgb, var(--color-text) 4%, transparent); }
+
+/* — dialog — */
+.dialog-backdrop {
+  position: fixed; inset: 0; display: grid; place-items: center;
+  padding: var(--space-4);
+  background: color-mix(in srgb, var(--color-neutral-900) 50%, transparent);
+}
+.dialog {
+  width: min(440px, 100%); display: flex; flex-direction: column; gap: var(--space-3);
+  padding: var(--space-4); border-radius: var(--radius-lg);
+  background: var(--color-surface); box-shadow: var(--shadow-lg);
+}
+.dialog-title {
+  font-family: var(--font-heading); font-weight: var(--font-heading-weight);
+  font-size: 20px;
+}
+.dialog-body { font-size: 14px; opacity: 0.85; }
+.dialog-actions { display: flex; justify-content: flex-end; gap: var(--space-2); margin-top: var(--space-2); }
+
+</style>
+<style>:root{--color-accent:#1F3D2E;--color-accent-600:oklch(0.43 0.06 155);--color-accent-700:oklch(0.28 0.045 155);--color-accent-100:oklch(0.94 0.02 155);--color-accent-800:oklch(0.25 0.04 155)}body{margin:0;background:var(--color-bg)}a{color:var(--color-text)}a:not(.btn):hover{color:var(--color-accent-600)}a:focus-visible{outline:2px solid var(--color-accent);outline-offset:2px}</style>
+<style>
+/* Kartläggning — klicka sig fram. Inget sparas, ingen mätning. */
+.kl [hidden]{display:none!important}
+.kl fieldset{border:0;margin:0;padding:0;min-width:0}
+.kl legend{font-family:var(--font-heading);font-weight:800;font-size:clamp(24px,3.2vw,32px);line-height:1.12;letter-spacing:-.02em;padding:0;margin:0 0 8px;outline:none}
+.kl-help{font-size:15px;line-height:1.5;margin:0 0 20px;color:color-mix(in srgb,var(--color-text) 70%,transparent)}
+.kl-sub{font-size:16px;font-weight:600;margin:0 0 12px}
+.kl-prog{display:flex;align-items:center;gap:14px;margin:0 0 28px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase}
+.kl-barwrap{flex:1;height:4px;background:var(--color-divider)}
+.kl-barwrap span{display:block;height:100%;width:25%;background:var(--color-accent);transition:width .2s}
+.kl-opts{display:grid;gap:10px}
+.kl-opt{position:relative;display:flex;align-items:center;gap:14px;min-height:56px;padding:12px 16px;border:2px solid var(--color-divider);cursor:pointer;font-size:17px;line-height:1.3;font-weight:600}
+.kl-opt input{position:absolute;opacity:0;width:0;height:0}
+.kl-opt::before{content:"";flex:none;width:18px;height:18px;border:2px solid var(--color-divider)}
+.kl-opt.r::before{border-radius:50%}
+.kl-opt small{display:block;font-weight:400;font-size:14px;opacity:.85}
+.kl-opt:hover{border-color:var(--color-accent)}
+.kl-opt.on{background:var(--color-accent);border-color:var(--color-accent);color:var(--color-bg)}
+.kl-opt.on::before{border-color:var(--color-bg);background:var(--color-bg)}
+.kl-opt:has(input:focus-visible){outline:2px solid var(--color-accent);outline-offset:2px}
+.kl .field{margin-top:22px}
+.kl .field>label{font-size:15px;font-weight:600;color:var(--color-text);margin-bottom:6px}
+.kl .input{font-size:16px;min-height:50px;padding:10px 12px}
+.kl-hint{display:block;font-size:13px;line-height:1.45;margin-top:6px;color:color-mix(in srgb,var(--color-text) 65%,transparent)}
+.kl-err{margin:16px 0 0;font-weight:600;color:oklch(0.5 0.19 33)}
+.kl-nav{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-top:28px}
+.kl-nav .btn{font-size:16px;padding:14px 22px;min-height:50px}
+.kl-res h3{font-size:clamp(26px,3.4vw,34px);line-height:1.1;letter-spacing:-.02em;margin:0 0 20px;outline:none}
+.kl-res h4{font-size:20px;margin:32px 0 8px}
+.kl-sum{margin:0}
+.kl-sum div{display:flex;flex-wrap:wrap;gap:2px 16px;padding:10px 0;border-top:1px solid var(--color-divider);font-size:16px}
+.kl-sum dt{flex:0 0 12em;color:color-mix(in srgb,var(--color-text) 65%,transparent)}
+.kl-sum dd{margin:0;font-weight:600}
+.kl-do{list-style:none;margin:0;padding:0}
+.kl-do li{padding:14px 0;border-top:2px solid var(--color-divider);font-size:17px;line-height:1.5}
+.kl-do li:last-child{border-bottom:2px solid var(--color-divider)}
+.kl-note{font-size:15px;line-height:1.5;margin:16px 0 0;color:color-mix(in srgb,var(--color-text) 75%,transparent)}
+.kl textarea.input{min-height:220px;font-size:14px;line-height:1.5}
+.kl-opt{flex-wrap:wrap;row-gap:2px}
+.kl-opt small{flex:0 0 100%;padding-left:32px}
+</style>
+</head>
+<body>
+<div style="background:var(--color-bg); color:var(--color-text); font-family:var(--font-body); min-height:100vh;">
+  <div style="max-width:1200px; margin:0 auto; padding:0 clamp(20px, 5vw, 72px);">
+    <header style="display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:12px 24px; padding:28px 0 0;">
+      <div style="display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 14px;"><span style="font-family:var(--font-heading); font-weight:800; font-size:22px;">SBKB</span><span style="font-size:14px; color:color-mix(in srgb, var(--color-text) 70%, transparent);">Södra Bohusläns konsultbyrå</span></div>
+      <a href="tel:+46722413887" style="font-weight:600; font-size:16px;">072-241 38 87</a>
+    </header>
+
+    <section style="display:flex; flex-wrap:wrap; gap:56px 64px; padding:clamp(48px, 8vw, 80px) 0 clamp(64px, 9vw, 96px);">
+      <div style="flex:7 1 440px; display:flex; flex-direction:column; justify-content:space-between; gap:48px;">
+        <h1 style="font-size:clamp(46px, 7vw, 84px); line-height:1.02; letter-spacing:-0.03em; margin:0 0 0 -0.058em; text-wrap:balance;">Mät och debitera förbrukningen per lägenhet</h1>
+        <div style="display:flex; flex-direction:column; gap:28px;">
+          <p style="font-size:clamp(18px, 1.8vw, 20px); line-height:1.55; margin:0; max-width:42ch; text-wrap:pretty;">Individuell mätning och debitering, IMD, innebär att varje lägenhet betalar för det den själv förbrukar. Jag är oberoende rådgivare åt bostadsrättsföreningar och hjälper er att ta reda på vad som passar huset, vad som behöver utredas först och hur det upphandlas. Vi börjar med el. Vatten, varmvatten och temperatur läggs till på samma mätnät.</p>
+          <div style="display:flex; flex-wrap:wrap; gap:16px;">
+            <a class="btn btn-primary" href="tel:+46722413887" style="font-size:16px; padding:14px 20px; min-width:260px; justify-content:flex-start; gap:12px;">Ring för konsultation<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+            <a class="btn btn-secondary" href="#kartlagg" style="font-size:16px; padding:14px 20px; min-width:260px; justify-content:flex-start; gap:12px;">Kartlägg föreningen<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M12 5v14"></path><path d="m5 12 7 7 7-7"></path></svg></a>
+          </div>
+        </div>
+      </div>
+      <div style="flex:5 1 340px; display:flex; align-items:flex-start; justify-content:center;">
+        <svg viewBox="0 0 380 440" role="img" aria-label="Ett mätnät: en insamlingsenhet och fem mätslag på samma buss — el, kallvatten, varmvatten, temperatur och värmestyrning" style="width:100%; height:auto; max-width:420px; display:block;">
+          <rect x="2" y="2" width="376" height="64" style="fill:var(--color-accent);"></rect>
+          <text x="20" y="31" style="font:800 20px var(--font-heading); fill:var(--color-bg);">Insamlingsenhet</text>
+          <text x="20" y="53" style="font:500 14px var(--font-body); fill:var(--color-bg);">en buss, upp till 128 mätare</text>
+          <line x1="40" y1="66" x2="40" y2="398" style="stroke:var(--color-accent); stroke-width:4;"></line>
+
+          <circle cx="40" cy="118" r="17" style="fill:var(--color-accent); stroke:var(--color-accent); stroke-width:4;"></circle>
+          <text x="40" y="124" text-anchor="middle" style="font:800 16px var(--font-heading); fill:var(--color-bg);">1</text>
+          <text x="80" y="116" style="font:800 21px var(--font-heading); fill:var(--color-text);">El</text>
+          <text x="80" y="137" style="font:500 14px var(--font-body); fill:var(--color-text); opacity:.75;">börjar här</text>
+
+          <circle cx="40" cy="188" r="17" style="fill:var(--color-bg); stroke:var(--color-accent); stroke-width:4;"></circle>
+          <text x="40" y="194" text-anchor="middle" style="font:800 16px var(--font-heading); fill:var(--color-accent);">2</text>
+          <text x="80" y="186" style="font:800 21px var(--font-heading); fill:var(--color-text);">Kallvatten</text>
+          <text x="80" y="207" style="font:500 14px var(--font-body); fill:var(--color-text); opacity:.75;">mätare per lägenhet</text>
+
+          <circle cx="40" cy="258" r="17" style="fill:var(--color-bg); stroke:var(--color-accent); stroke-width:4;"></circle>
+          <text x="40" y="264" text-anchor="middle" style="font:800 16px var(--font-heading); fill:var(--color-accent);">3</text>
+          <text x="80" y="256" style="font:800 21px var(--font-heading); fill:var(--color-text);">Varmvatten</text>
+          <text x="80" y="277" style="font:500 14px var(--font-body); fill:var(--color-text); opacity:.75;">när det bereds centralt</text>
+
+          <circle cx="40" cy="328" r="17" style="fill:var(--color-bg); stroke:var(--color-accent); stroke-width:4;"></circle>
+          <text x="40" y="334" text-anchor="middle" style="font:800 16px var(--font-heading); fill:var(--color-accent);">4</text>
+          <text x="80" y="326" style="font:800 21px var(--font-heading); fill:var(--color-text);">Temperatur</text>
+          <text x="80" y="347" style="font:500 14px var(--font-body); fill:var(--color-text); opacity:.75;">trådad givare per lägenhet</text>
+
+          <circle cx="40" cy="398" r="17" style="fill:var(--color-bg); stroke:var(--color-accent); stroke-width:4;"></circle>
+          <text x="40" y="404" text-anchor="middle" style="font:800 16px var(--font-heading); fill:var(--color-accent);">5</text>
+          <text x="80" y="396" style="font:800 21px var(--font-heading); fill:var(--color-text);">Värmestyrning</text>
+          <text x="80" y="417" style="font:500 14px var(--font-body); fill:var(--color-text); opacity:.75;">mot undercentralen</text>
+        </svg>
+      </div>
+    </section>
+
+    <section style="border-top:2px solid var(--color-divider); padding:clamp(56px, 8vw, 88px) 0 clamp(64px, 8vw, 96px); display:flex; flex-wrap:wrap; gap:28px 72px; align-items:flex-start;">
+      <h2 style="flex:5 1 260px; font-size:clamp(32px, 4vw, 44px); line-height:1.08; letter-spacing:-0.02em; margin:0;">Nätet dras en gång</h2>
+      <div style="flex:7 1 400px; display:flex; flex-direction:column; gap:20px; max-width:58ch;">
+        <p style="font-size:18px; line-height:30px; margin:0; text-wrap:pretty;">Mätarna kopplas på M-Bus, en standard som hanterar el, vatten och värme på samma buss och samma insamlingsenhet. Nätet dras en gång. Därefter kan vattenmätare och temperaturgivare läggas till utan ny infrastruktur.</p>
+        <p style="font-size:18px; line-height:30px; margin:0; text-wrap:pretty;">I ett flerbostadshus kan lägenheternas elabonnemang ersättas av ett gemensamt. Då är det antalet abonnemang som gör skillnaden, inte själva mätningen. I radhus, parhus och kedjehus gäller andra regler. Där kan gemensam el kräva nätkoncession, och där tittar vi först på vatten och laddplatser.</p>
+        <p style="font-size:18px; line-height:30px; margin:0; text-wrap:pretty;">IMD el och IMD kallvatten omfattas inte av lagkraven. IMD värme och varmvatten gör det i vissa fall: i nybyggnad, vid väsentlig ändring av installationerna för tappvarmvatten, och för flerbostadshus med ett primärenergital över 200 kWh/m² Atemp och år. Kartläggningen visar vad som gäller i er förening.</p>
+      </div>
+    </section>
+
+    <section id="kartlagg" style="border-top:2px solid var(--color-divider); padding:clamp(56px, 8vw, 88px) 0 clamp(64px, 8vw, 96px); display:flex; flex-wrap:wrap; gap:40px 72px; align-items:flex-start;">
+      <div style="flex:5 1 260px; display:flex; flex-direction:column; gap:20px;">
+        <h2 style="font-size:clamp(32px, 4vw, 44px); line-height:1.08; letter-spacing:-0.02em; margin:0;">Kartlägg föreningen</h2>
+        <p style="font-size:18px; line-height:30px; margin:0; max-width:34ch; color:color-mix(in srgb, var(--color-text) 80%, transparent);">Fyra steg om föreningen, så ser du vilka mätslag som passar och vad som behöver utredas först. Det tar ett par minuter. Inget sparas på sidan, och svaren skickas bara om du själv mejlar dem.</p>
+      </div>
+      <div id="kl" class="kl" style="flex:7 1 400px; min-width:0; max-width:640px;">
+        <noscript><p style="font-size:18px; line-height:30px; margin:0;">Kartläggningen kräver JavaScript. Ring <a href="tel:+46722413887">072-241 38 87</a> eller mejla <a href="mailto:fredrik@sbkb.se">fredrik@sbkb.se</a>.</p></noscript>
+        <form id="kl-form" novalidate hidden>
+          <div id="kl-progwrap" class="kl-prog"><span id="kl-prog" aria-live="polite">Steg 1 av 4</span><span class="kl-barwrap"><span id="kl-bar"></span></span></div>
+
+          <fieldset class="kl-steg">
+            <legend>Hur ser föreningen ut?</legend>
+            <p class="kl-help">Ungefär räcker. Det går att rätta senare.</p>
+            <div class="field" style="margin-top:0;">
+              <label for="kl-lgh">Antal lägenheter eller bostäder</label>
+              <input class="input" id="kl-lgh" inputmode="numeric" autocomplete="off" placeholder="till exempel 24">
+            </div>
+            <p class="kl-sub" style="margin-top:24px;">Vilken sorts bebyggelse?</p>
+            <div class="kl-opts">
+              <label class="kl-opt r"><input type="radio" name="bygg" value="flerbostadshus" data-l="Flerbostadshus">Flerbostadshus<small>Flera lägenheter i samma byggnad</small></label>
+              <label class="kl-opt r"><input type="radio" name="bygg" value="radhus" data-l="Radhus, parhus eller kedjehus">Radhus, parhus eller kedjehus<small>Bostäderna ligger i skilda byggnader eller längor</small></label>
+              <label class="kl-opt r"><input type="radio" name="bygg" value="blandat" data-l="Blandat">Blandat</label>
+            </div>
+            <div class="field">
+              <label for="kl-nbyg">Antal byggnader (valfritt)</label>
+              <input class="input" id="kl-nbyg" inputmode="numeric" autocomplete="off" placeholder="till exempel 4">
+              <small class="kl-hint">Ett trapphus eller en länga räknas som en byggnad om de hänger ihop.</small>
+            </div>
+            <div class="kl-opts" style="margin-top:22px;">
+              <label class="kl-opt"><input type="checkbox" name="finns" value="ja" data-l="Det finns redan mätning per bostad">Det finns redan mätning per bostad<small>Till exempel för laddplatser</small></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="kl-steg" hidden>
+            <legend>Vad ska mätas?</legend>
+            <p class="kl-help">Välj ett eller flera. Börja gärna med el, resten kan läggas till senare.</p>
+            <div class="kl-opts">
+              <label class="kl-opt"><input type="checkbox" name="mat" value="el" data-l="El">El<small>Förbrukning per lägenhet</small></label>
+              <label class="kl-opt"><input type="checkbox" name="mat" value="kv" data-l="Kallvatten">Kallvatten</label>
+              <label class="kl-opt"><input type="checkbox" name="mat" value="vv" data-l="Varmvatten">Varmvatten</label>
+              <label class="kl-opt"><input type="checkbox" name="mat" value="temp" data-l="Temperatur i lägenheterna">Temperatur i lägenheterna<small>En rumsgivare per lägenhet</small></label>
+              <label class="kl-opt"><input type="checkbox" name="mat" value="varme" data-l="Värme, energi per lägenhet">Värme, energi per lägenhet</label>
+              <label class="kl-opt"><input type="checkbox" name="mat" value="ladd" data-l="Laddplatser för elbil">Laddplatser för elbil</label>
+              <label class="kl-opt"><input type="checkbox" name="mat" value="vetej" data-l="Vet inte än">Vet inte än<small>Då går vi igenom vad som passar</small></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="kl-steg" hidden>
+            <legend>El och elavtal</legend>
+            <p class="kl-help">Står på elfakturan och i årsredovisningen.</p>
+            <p class="kl-sub">Hur är elen ordnad idag?</p>
+            <div class="kl-opts">
+              <label class="kl-opt r"><input type="radio" name="elab" value="egna" data-l="Varje lägenhet har eget elabonnemang">Varje lägenhet har eget elabonnemang<small>Och föreningen har ett för fastighetens el</small></label>
+              <label class="kl-opt r"><input type="radio" name="elab" value="gemensam" data-l="Föreningen har ett gemensamt abonnemang för all el">Föreningen har ett gemensamt abonnemang för all el</label>
+              <label class="kl-opt r"><input type="radio" name="elab" value="vetej" data-l="Vet inte eller blandat">Vet inte eller blandat<small>En mycket låg elpost i årsredovisningen tyder på egna abonnemang</small></label>
+            </div>
+            <div class="field">
+              <label for="kl-handlare">Föreningens elhandlare (valfritt)</label>
+              <input class="input" id="kl-handlare" list="dl-handlare" autocomplete="off" placeholder="till exempel Vattenfall">
+              <small class="kl-hint">Bolaget som skickar elfakturan för fastighetens el.</small>
+            </div>
+            <div class="field">
+              <label for="kl-nat">Nätbolag (valfritt)</label>
+              <input class="input" id="kl-nat" list="dl-nat" autocomplete="off" placeholder="till exempel Göteborg Energi Nät">
+              <small class="kl-hint">Står på elfakturan, oftast som elnät eller nätavgift.</small>
+            </div>
+            <p class="kl-sub" style="margin-top:24px;">Vilket elavtal har föreningen?</p>
+            <div class="kl-opts">
+              <label class="kl-opt r"><input type="radio" name="avtal" value="timpris" data-l="Timpris eller kvartspris">Timpris eller kvartspris</label>
+              <label class="kl-opt r"><input type="radio" name="avtal" value="manadspris" data-l="Rörligt månadspris">Rörligt månadspris</label>
+              <label class="kl-opt r"><input type="radio" name="avtal" value="fast" data-l="Fast pris">Fast pris</label>
+              <label class="kl-opt r"><input type="radio" name="avtal" value="vetej" data-l="Vet inte">Vet inte</label>
+            </div>
+            <div class="field">
+              <label for="kl-el">Fastighetens elförbrukning per år, kWh (valfritt)</label>
+              <input class="input" id="kl-el" inputmode="numeric" autocomplete="off" placeholder="till exempel 17 500">
+              <small class="kl-hint">Står på årsfakturan.</small>
+            </div>
+          </fieldset>
+
+          <fieldset class="kl-steg" hidden>
+            <legend>Värme och vatten</legend>
+            <p class="kl-help">Det avgör vilka mätslag som finns att välja mellan.</p>
+            <p class="kl-sub">Hur värms husen?</p>
+            <div class="kl-opts">
+              <label class="kl-opt r"><input type="radio" name="uppv" value="fjarrvarme" data-l="Fjärrvärme">Fjärrvärme</label>
+              <label class="kl-opt r"><input type="radio" name="uppv" value="varmepump" data-l="Värmepump, berg, luft eller frånluft">Värmepump<small>Berg, luft eller frånluft</small></label>
+              <label class="kl-opt r"><input type="radio" name="uppv" value="el" data-l="Direktel eller elpanna">Direktel eller elpanna</label>
+              <label class="kl-opt r"><input type="radio" name="uppv" value="bransle" data-l="Pellets, ved eller olja">Pellets, ved eller olja</label>
+              <label class="kl-opt r"><input type="radio" name="uppv" value="annat" data-l="Annat eller vet inte">Annat eller vet inte</label>
+            </div>
+            <div class="field" id="kl-fjv" hidden>
+              <label for="kl-fjvbolag">Fjärrvärmebolag (valfritt)</label>
+              <input class="input" id="kl-fjvbolag" list="dl-fjv" autocomplete="off" placeholder="till exempel Göteborg Energi">
+              <label for="kl-fjvin" style="margin-top:16px; display:block;">Fjärrvärme per år, kWh (valfritt)</label>
+              <input class="input" id="kl-fjvin" inputmode="numeric" autocomplete="off" placeholder="till exempel 180 000">
+            </div>
+            <p class="kl-sub" style="margin-top:24px;">Hur görs varmvattnet?</p>
+            <div class="kl-opts">
+              <label class="kl-opt r"><input type="radio" name="vv" value="central" data-l="Centralt, en beredning för hela huset">Centralt<small>En beredning för hela huset, till exempel i en undercentral</small></label>
+              <label class="kl-opt r"><input type="radio" name="vv" value="lokal" data-l="I varje bostad, egen beredare">I varje bostad<small>Egen beredare i varje lägenhet eller hus</small></label>
+              <label class="kl-opt r"><input type="radio" name="vv" value="vetej" data-l="Vet inte">Vet inte</label>
+            </div>
+            <p class="kl-sub" style="margin-top:24px;">Hur är vattnet ordnat?</p>
+            <div class="kl-opts">
+              <label class="kl-opt r"><input type="radio" name="va" value="gemensamt" data-l="Gemensamt vattenabonnemang, vattnet ingår i avgiften">Gemensamt vattenabonnemang<small>Vattnet ingår i månadsavgiften</small></label>
+              <label class="kl-opt r"><input type="radio" name="va" value="egna" data-l="Varje bostad har eget vattenabonnemang">Varje bostad har eget abonnemang</label>
+              <label class="kl-opt r"><input type="radio" name="va" value="vetej" data-l="Vet inte">Vet inte</label>
+            </div>
+            <div class="field">
+              <label for="kl-vabolag">Vatten- och avloppsbolag (valfritt)</label>
+              <input class="input" id="kl-vabolag" list="dl-va" autocomplete="off" placeholder="till exempel Kretslopp och vatten">
+              <label for="kl-vain" style="margin-top:16px; display:block;">Vattenförbrukning per år, m³ (valfritt)</label>
+              <input class="input" id="kl-vain" inputmode="numeric" autocomplete="off" placeholder="till exempel 1 250">
+            </div>
+          </fieldset>
+
+          <datalist id="dl-handlare"><option value="Vattenfall"><option value="Göteborg Energi"><option value="E.ON"><option value="Fortum"><option value="Tibber"><option value="Bixia"><option value="Telge Energi"><option value="Kungälv Energi"></datalist>
+          <datalist id="dl-nat"><option value="Göteborg Energi Nät"><option value="Ellevio"><option value="Vattenfall Eldistribution"><option value="E.ON Energidistribution"><option value="Kungälv Energi"><option value="Mölndal Energi"><option value="Partille Energi"></datalist>
+          <datalist id="dl-fjv"><option value="Göteborg Energi"><option value="Kungälv Energi"><option value="Mölndal Energi"><option value="Partille Energi"><option value="Vattenfall"><option value="Fortum Värme"><option value="E.ON"><option value="Stockholm Exergi"></datalist>
+          <datalist id="dl-va"><option value="Kretslopp och vatten"><option value="Stockholm Vatten och Avfall"><option value="VA Syd"><option value="Kungälv kommun"></datalist>
+
+          <p id="kl-err" class="kl-err" role="alert" hidden></p>
+          <div id="kl-nav" class="kl-nav">
+            <button type="button" id="kl-back" class="btn btn-secondary" hidden>Tillbaka</button>
+            <button type="button" id="kl-next" class="btn btn-primary"><span id="kl-nx">Nästa</span><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></button>
+          </div>
+        </form>
+
+        <div id="kl-res" class="kl-res" hidden>
+          <h3 id="kl-res-h" tabindex="-1">Så ser det ut för er förening</h3>
+          <dl id="kl-sum" class="kl-sum"></dl>
+          <h4>Så många mätpunkter blir det</h4>
+          <dl id="kl-pkt" class="kl-sum"></dl>
+          <p class="kl-note" id="kl-pkt-note"></p>
+          <h4>Det här tittar vi på</h4>
+          <ul id="kl-do" class="kl-do"></ul>
+          <p class="kl-note">Det här är ingen offert och ingen beräkning. Vad det kostar och vad som lönar sig avgörs när vi har sett byggnaden, mätarplatserna och avtalen.</p>
+          <div class="kl-nav">
+            <a id="kl-mail" class="btn btn-primary" href="mailto:fredrik@sbkb.se">Mejla mina svar</a>
+            <a class="btn btn-secondary" href="tel:+46722413887">Ring 072-241 38 87</a>
+          </div>
+          <div class="field">
+            <label for="kl-ta">Dina svar. Öppnas inget mejl, markera texten och kopiera den.</label>
+            <textarea id="kl-ta" class="input" readonly rows="11"></textarea>
+          </div>
+          <div class="kl-nav" style="margin-top:12px;">
+            <button type="button" id="kl-copy" class="btn btn-secondary">Kopiera svaren</button>
+            <button type="button" id="kl-om" class="btn btn-ghost">Börja om</button>
+            <span id="kl-copied" aria-live="polite" style="font-size:14px;"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section style="border-top:2px solid var(--color-divider); padding:clamp(56px, 8vw, 88px) 0 clamp(72px, 9vw, 104px); display:flex; flex-wrap:wrap; gap:28px 72px; align-items:flex-start;">
+      <h2 style="flex:5 1 260px; font-size:clamp(32px, 4vw, 44px); line-height:1.08; letter-spacing:-0.02em; margin:0;">Så jobbar jag</h2>
+      <div style="flex:7 1 400px; display:flex; flex-direction:column; gap:20px; max-width:58ch;">
+        <p style="font-size:18px; line-height:30px; margin:0; text-wrap:pretty;">Jag är oberoende rådgivare åt föreningen. Jag säljer inga mätare och utför inget montage.</p>
+        <p style="font-size:18px; line-height:30px; margin:0; text-wrap:pretty;">Först går vi igenom föreningen: eget eller gemensamt elabonnemang, hur vattnet och varmvattnet är dragna, och vad lagen kräver. Sedan skriver jag kraven, tar in anbud från flera leverantörer och jämför dem.</p>
+        <p style="font-size:18px; line-height:30px; margin:0; text-wrap:pretty;">Under genomförandet följer jag upp att det som beställdes blir levererat.</p>
+      </div>
+    </section>
+  </div>
+  <section style="background:var(--color-accent); color:var(--color-bg);">
+    <div style="max-width:1200px; margin:0 auto; padding:clamp(56px, 8vw, 80px) clamp(20px, 5vw, 72px) clamp(64px, 9vw, 88px); display:flex; flex-direction:column; gap:20px;">
+      <h2 style="font-size:clamp(34px, 4.5vw, 48px); line-height:1.06; letter-spacing:-0.02em; margin:0 0 0 -0.058em; color:var(--color-bg);">Ring för konsultation</h2>
+      <a href="tel:+46722413887" style="font-family:var(--font-heading); font-weight:800; font-size:clamp(52px, 10vw, 120px); line-height:1; letter-spacing:-0.035em; margin-left:-0.045em; color:var(--color-bg); text-decoration:none;">072-241 38 87</a>
+      <div style="display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 12px; font-size:clamp(18px, 2vw, 24px); line-height:1.3; padding-top:20px; border-top:2px solid var(--color-bg);">
+        <span>eller mejla</span><a href="mailto:fredrik@sbkb.se" style="font-weight:800; color:var(--color-bg);">fredrik@sbkb.se</a>
+      </div>
+    </div>
+  </section>
+  <footer style="max-width:1200px; margin:0 auto; padding:28px clamp(20px, 5vw, 72px); display:flex; flex-wrap:wrap; gap:8px 24px; font-size:14px; color:color-mix(in srgb, var(--color-text) 70%, transparent);">
+    <span>Södra Bohusläns konsultbyrå</span><a href="https://sbkb.se" style="color:inherit;">SBKB.se</a>
+  </footer>
+</div>
+
+<script>
+/* Kartläggning IMD — körs helt i webbläsaren. Ingen lagring, inga cookies, ingen mätning. */
+(function () {
+  var f = document.getElementById('kl-form');
+  if (!f) return;
+  f.hidden = false;
+  var steg = f.querySelectorAll('.kl-steg'), N = steg.length, cur = 0;
+  var box = document.getElementById('kl');
+  var res = document.getElementById('kl-res');
+  var err = document.getElementById('kl-err');
+  var back = document.getElementById('kl-back'), next = document.getElementById('kl-next');
+  var nx = document.getElementById('kl-nx');
+  var prog = document.getElementById('kl-prog'), bar = document.getElementById('kl-bar');
+  var fjv = document.getElementById('kl-fjv');
+  var ta = document.getElementById('kl-ta'), mail = document.getElementById('kl-mail');
+  var copied = document.getElementById('kl-copied');
+
+  function checked(n) { return f.querySelectorAll('input[name="' + n + '"]:checked'); }
+  function labels(n) { return Array.prototype.map.call(checked(n), function (i) { return i.getAttribute('data-l'); }); }
+  function vals(n) { return Array.prototype.map.call(checked(n), function (i) { return i.value; }); }
+  function one(n) { var l = labels(n); return l.length ? l[0] : ''; }
+  function txt(id) { return (document.getElementById(id).value || '').replace(/^\s+|\s+$/g, ''); }
+
+  // "18 000", "18000", "18.000" och "150,5" tolkas; allt annat blir tomt
+  function num(id) {
+    var s = (document.getElementById(id).value || '').replace(/[\s ]/g, '');
+    if (/^\d{1,3}(\.\d{3})+(,\d+)?$/.test(s)) s = s.replace(/\./g, '');
+    s = s.replace(',', '.');
+    var v = parseFloat(s);
+    return (isFinite(v) && v > 0) ? Math.round(v) : null;
+  }
+  function fmt(v) { return String(v).replace(/\B(?=(\d{3})+(?!\d))/g, ' '); }
+
+  function sync() {
+    Array.prototype.forEach.call(f.querySelectorAll('.kl-opt'), function (l) {
+      l.classList.toggle('on', l.querySelector('input').checked);
+    });
+  }
+
+  function inView() {
+    var r = box.getBoundingClientRect();
+    if (r.top < 0 || r.top > window.innerHeight * 0.6) box.scrollIntoView({ block: 'start' });
+  }
+
+  function visaFjv() { fjv.hidden = vals('uppv').indexOf('fjarrvarme') < 0; }
+
+  function show(i, fokus) {
+    cur = i;
+    for (var k = 0; k < N; k++) steg[k].hidden = (k !== i);
+    prog.textContent = 'Steg ' + (i + 1) + ' av ' + N;
+    bar.style.width = ((i + 1) / N * 100) + '%';
+    back.hidden = (i === 0);
+    nx.textContent = (i === N - 1) ? 'Visa resultat' : 'Nästa';
+    err.hidden = true;
+    visaFjv();
+    if (fokus) {
+      var lg = steg[i].querySelector('legend');
+      lg.setAttribute('tabindex', '-1');
+      lg.focus({ preventScroll: true });
+      inView();
+    }
+  }
+
+  function kontroll(i) {
+    var m = '';
+    if (i === 0) {
+      var n = num('kl-lgh');
+      if (!n || n > 5000) m = 'Skriv antal lägenheter som ett tal, till exempel 24.';
+      else if (!checked('bygg').length) m = 'Välj vilken sorts bebyggelse det gäller.';
+    }
+    if (i === 1 && !checked('mat').length) m = 'Välj minst ett alternativ. Vet du inte, välj «Vet inte än».';
+    if (i === 2 && !checked('elab').length) m = 'Välj hur elen är ordnad. Vet du inte, välj «Vet inte eller blandat».';
+    if (i === 3 && !checked('uppv').length) m = 'Välj hur husen värms. Vet du inte, välj «Annat eller vet inte».';
+    if (m) { err.textContent = m; err.hidden = false; return false; }
+    err.hidden = true;
+    return true;
+  }
+
+  function rader() {
+    var r = [];
+    var lgh = num('kl-lgh'), nb = num('kl-nbyg');
+    r.push(['Föreningen', fmt(lgh) + ' lägenheter, ' + one('bygg').toLowerCase() + (nb ? ', ' + fmt(nb) + ' byggnader' : '')]);
+    r.push(['Ska mätas', labels('mat').join(', ')]);
+    if (vals('finns').length) r.push(['Mätning finns redan', 'Ja']);
+    r.push(['El idag', one('elab')]);
+    var h = txt('kl-handlare'), nt = txt('kl-nat');
+    r.push(['Elhandlare', h || 'Ej angiven']);
+    r.push(['Nätbolag', nt || 'Ej angivet']);
+    r.push(['Elavtal', one('avtal') || 'Ej angivet']);
+    var el = num('kl-el');
+    r.push(['Elförbrukning per år', el ? fmt(el) + ' kWh' : 'Ej angiven']);
+    r.push(['Uppvärmning', one('uppv')]);
+    if (vals('uppv').indexOf('fjarrvarme') >= 0) {
+      r.push(['Fjärrvärmebolag', txt('kl-fjvbolag') || 'Ej angivet']);
+      var fv = num('kl-fjvin');
+      r.push(['Fjärrvärme per år', fv ? fmt(fv) + ' kWh' : 'Ej angiven']);
+    }
+    r.push(['Varmvatten', one('vv') || 'Ej angivet']);
+    r.push(['Vatten', one('va') || 'Ej angivet']);
+    r.push(['Vatten- och avloppsbolag', txt('kl-vabolag') || 'Ej angivet']);
+    var vi = num('kl-vain');
+    r.push(['Vattenförbrukning per år', vi ? fmt(vi) + ' m³' : 'Ej angiven']);
+    return r;
+  }
+
+  // Antal mätpunkter, räknat på antal lägenheter. Återger bara aritmetik, inga kronor.
+  function punkter() {
+    var lgh = num('kl-lgh');
+    var bygg = vals('bygg')[0], mat = vals('mat'), vv = vals('vv')[0];
+    var har = function (x) { return mat.indexOf(x) >= 0; };
+    var rad = [], lo = 0, hi = 0;
+    function lagg(namn, a, b, text) {
+      rad.push([namn, text]);
+      lo += a; hi += b;
+    }
+    if (har('el')) {
+      if (bygg === 'flerbostadshus') lagg('Elmätare', lgh + 1, lgh + 1, fmt(lgh + 1) + ', en per lägenhet och en för fastighetens el');
+      else lagg('Elmätare', lgh, lgh, fmt(lgh) + ', en per bostad');
+    }
+    if (har('kv')) {
+      if (vv === 'lokal') lagg('Kallvattenmätare', lgh, lgh, fmt(lgh) + ', en per bostad');
+      else lagg('Kallvattenmätare', lgh, 2 * lgh, fmt(lgh) + '–' + fmt(2 * lgh) + ', en eller två per lägenhet beroende på antal stammar');
+    }
+    if (har('vv')) {
+      if (vv === 'lokal') rad.push(['Varmvattenmätare', 'Behövs normalt inte. Varmvattnet bereds i varje bostad och energin betalas på bostadens elabonnemang']);
+      else lagg('Varmvattenmätare', lgh, 2 * lgh, fmt(lgh) + '–' + fmt(2 * lgh) + (vv === 'vetej' ? ', om varmvattnet görs centralt' : ', en eller två per lägenhet beroende på antal stammar'));
+    }
+    if (har('temp')) lagg('Temperaturgivare', lgh, lgh, fmt(lgh) + ', en per lägenhet');
+    if (har('varme')) rad.push(['Värmemätare', 'Antalet beror på hur värmen är dragen i husen']);
+    if (har('ladd')) rad.push(['Laddplatser', 'En mätare per laddplats. Antalet laddplatser anger ni i utredningen']);
+    if (lo > 0) {
+      var a = Math.ceil(lo / 128), b = Math.ceil(hi / 128);
+      rad.push(['Insamlingsenheter', (a === b ? String(a) : a + '–' + b) + ' (en enhet klarar 128 mätare)']);
+      rad.push(['Mätpunkter totalt', lo === hi ? fmt(lo) : fmt(lo) + '–' + fmt(hi)]);
+    }
+    return rad;
+  }
+
+  function tittar() {
+    var t = [];
+    var bygg = vals('bygg')[0], mat = vals('mat'), elab = vals('elab')[0];
+    var va = vals('va')[0], vv = vals('vv')[0], avtal = vals('avtal')[0];
+    var nb = num('kl-nbyg');
+    var har = function (x) { return mat.indexOf(x) >= 0; };
+    var fler = (bygg === 'flerbostadshus');
+
+    if (fler && elab === 'egna') t.push(['Utgångspunkt', 'El först. Mätnätet dras en gång, och de andra mätslagen läggs på det utan ny infrastruktur.']);
+    else if (bygg === 'radhus') t.push(['Utgångspunkt', 'Vatten och laddplatser först. Gemensam el kräver i radhus sannolikt nätkoncession, och nätbolaget mäter redan varje bostad.']);
+    else t.push(['Utgångspunkt', 'Det beror på hur vattnet och värmen är dragna. Vi går igenom det när vi pratar.']);
+
+    if (fler) {
+      t.push(['Flerbostadshus', 'När lägenheterna sitter i samma byggnad får föreningen bygga ett internt elnät utan nätkoncession (förordning 2007:215, 5 §). Det är det som gör att många elabonnemang kan bli ett.']);
+      if (nb && nb > 1) t.push(['Flera byggnader', 'Undantaget gäller nät på eller inom en byggnad. Ligger lägenheterna i flera fristående byggnader behöver vi utreda om det gäller mellan dem. Energimarknadsinspektionen ger bindande besked i frågan, och det kostar ingenting.']);
+    } else if (bygg === 'radhus') {
+      t.push(['Radhus, parhus och kedjehus', 'De räknas inte som en byggnad. Gemensam el kräver då sannolikt nätkoncession. Energimarknadsinspektionen ger bindande besked i frågan, och det kostar ingenting.']);
+    } else {
+      t.push(['Blandad bebyggelse', 'Flerbostadshus och radhus bedöms var för sig, eftersom undantaget för internt elnät gäller inom en byggnad.']);
+    }
+
+    if (har('el') || fler) {
+      if (fler && elab === 'egna') t.push(['El', 'Med gemensam el ersätts lägenheternas elabonnemang av ett. Det minskar antalet fasta nätavgifter, och mätare i varje lägenhet fördelar kostnaden. Hur mycket det blir i kronor beror på nätbolagets avgifter och föreningens avtal, som vi tittar på i utredningen.']);
+      else if (fler && elab === 'gemensam') t.push(['El', 'Ni har redan ett gemensamt abonnemang. Då ändrar mätning per lägenhet hur kostnaden fördelas, men inte antalet abonnemang.']);
+      else if (fler && elab === 'vetej') t.push(['El', 'Titta i årsredovisningen. En mycket låg elpost tyder på att lägenheterna har egna abonnemang, och då är gemensam el det som påverkar kostnaden.']);
+      else if (!fler && har('el')) t.push(['El', 'Nätbolaget mäter redan varje bostad. Mätare som läser av samma sak minskar inte föreningens nätavgifter.']);
+    }
+    if (fler && elab === 'egna') {
+      t.push(['Elavtalet', 'Föreningens elpris gäller bara föreningens eget abonnemang. Efter ett byte till gemensam el gäller det hela husets volym, så avtalet bör ses över.']);
+      t.push(['Nätbolagets avgifter', 'Fast avgift, effektavgift och överföringsavgift avgör vad ett byte betyder. Kontrollera vilken tariff fastighetens abonnemang får när det ska bära hela husets last.']);
+    }
+
+    if (har('kv') || har('vv')) {
+      if (va === 'gemensamt') t.push(['Vatten', 'Vattnet ingår i avgiften, så ingen betalar för sin egen förbrukning. Mätare ger varje hushåll en egen siffra att följa.']);
+      else if (va === 'egna') t.push(['Vatten', 'Har varje bostad eget vattenabonnemang betalar varje hushåll redan för sin förbrukning. Då finns inget att fördela och vattenspåret faller bort.']);
+      else t.push(['Vatten', 'Kontrollera VA-fakturan: är det ett gemensamt abonnemang för hela föreningen? Svaret avgör om vattenspåret finns.']);
+    }
+    if (har('kv') && vv === 'lokal') t.push(['Kallvatten i radhus och hus med egen beredare', 'Bereds varmvattnet i varje bostad räcker en kallvattenmätare per bostad. Hushållet betalar redan energin för varmvattnet på sitt elabonnemang.']);
+    if (har('vv')) {
+      if (vv === 'lokal') t.push(['Varmvatten', 'Bereds varmvattnet i varje bostad betalas energin redan på bostadens elabonnemang, och ingen separat varmvattenmätning behövs för den.']);
+      else t.push(['Varmvatten', 'Mätning kräver mätare på både kall- och varmvattenstammen. Har lägenheten två stammar, till exempel kök och badrum, blir det upp till fyra mätare per lägenhet. Lagen kräver IMD för tappvarmvatten i nybyggnad sedan 2022-06-01 och vid väsentlig ändring av installationerna för tappvarmvatten, till exempel stambyte. Kravet gäller inte om det är tekniskt ogenomförbart eller olönsamt.']);
+    }
+    if (har('varme')) t.push(['Värme', 'IMD värme är krav för flerbostadshus med ett primärenergital över 200 kWh/m² Atemp och år. Primärenergitalet står i energideklarationen. Kravet gäller inte om installationen är tekniskt ogenomförbar eller olönsam.']);
+    if (har('temp')) t.push(['Temperatur', 'En rumsgivare per lägenhet, trådad och dragen i samma arbetsmoment som vattenmätarna. Trådlösa givare med batteri blir en förvaltningspost: batterier ska bytas hos medlemmen och givare tappas bort eller flyttas.']);
+    if (har('ladd')) t.push(['Laddplatser', 'Mätning per laddplats ger underlag för att debitera laddningen. Finns redan ett system för laddplatser kan det kanske byggas ut, så vi tar reda på fabrikat, insamlingsenhet och kanalisation.']);
+    if (vals('finns').length && !har('ladd')) t.push(['Befintlig mätning', 'Vi tar reda på fabrikat, insamlingsenhet och kanalisation. Det som finns kan kanske byggas ut.']);
+    if (har('vetej')) t.push(['Vet inte än', 'Då börjar vi med de frågor som avgör vad som går: eget eller gemensamt elabonnemang, eget eller gemensamt vatten, och hur varmvattnet görs.']);
+    return t;
+  }
+
+  function kalla() {
+    try {
+      var s = new URLSearchParams(window.location.search).get('src');
+      if (s && /^[A-Za-z0-9_-]{1,24}$/.test(s)) return s;
+    } catch (e) {}
+    return '';
+  }
+
+  function fyll(id, r) {
+    var dl = document.getElementById(id);
+    dl.textContent = '';
+    r.forEach(function (x) {
+      var d = document.createElement('div');
+      var dt = document.createElement('dt'); dt.textContent = x[0];
+      var dd = document.createElement('dd'); dd.textContent = x[1];
+      d.appendChild(dt); d.appendChild(dd); dl.appendChild(d);
+    });
+  }
+
+  function resultat() {
+    var r = rader();
+    fyll('kl-sum', r);
+    var p = punkter();
+    fyll('kl-pkt', p);
+    document.getElementById('kl-pkt-note').textContent = 'Räknat på antal lägenheter och ska kontrolleras på plats. Antalet stammar per lägenhet avgör antalet vattenmätare.';
+    var ul = document.getElementById('kl-do');
+    ul.textContent = '';
+    tittar().forEach(function (x) {
+      var li = document.createElement('li');
+      var b = document.createElement('strong'); b.textContent = x[0] + '. ';
+      li.appendChild(b); li.appendChild(document.createTextNode(x[1]));
+      ul.appendChild(li);
+    });
+    var src = kalla();
+    var body = 'Hej Fredrik,\r\n\r\nJag har fyllt i kartläggningen på sbkb.se/imd.\r\n\r\n' +
+      r.map(function (x) { return x[0] + ': ' + x[1]; }).join('\r\n') +
+      '\r\n\r\nMätpunkter:\r\n' +
+      p.map(function (x) { return x[0] + ': ' + x[1]; }).join('\r\n') +
+      (src ? '\r\n\r\nKälla: ' + src : '') +
+      '\r\n\r\nFöreningens namn, mitt namn och telefonnummer:\r\n';
+    ta.value = body;
+    mail.href = 'mailto:fredrik@sbkb.se?subject=' + encodeURIComponent('Kartläggning IMD') + '&body=' + encodeURIComponent(body);
+    f.hidden = true;
+    res.hidden = false;
+    copied.textContent = '';
+    var h = document.getElementById('kl-res-h');
+    h.focus({ preventScroll: true });
+    inView();
+  }
+
+  next.addEventListener('click', function () {
+    if (!kontroll(cur)) return;
+    if (cur === N - 1) resultat(); else show(cur + 1, true);
+  });
+  back.addEventListener('click', function () { if (cur > 0) show(cur - 1, true); });
+  f.addEventListener('change', function (e) {
+    var t = e.target;
+    if (t && t.name === 'mat') {
+      // «Vet inte än» utesluter övriga val
+      Array.prototype.forEach.call(f.querySelectorAll('input[name="mat"]'), function (i) {
+        if (t.checked && i !== t && ((t.value === 'vetej') || (i.value === 'vetej'))) i.checked = false;
+      });
+    }
+    if (t && t.name === 'uppv') visaFjv();
+    sync();
+  });
+  f.addEventListener('submit', function (e) { e.preventDefault(); });
+  f.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' && e.target && e.target.tagName === 'INPUT' && e.target.type === 'text') {
+      e.preventDefault();
+      next.click();
+    }
+  });
+
+  document.getElementById('kl-om').addEventListener('click', function () {
+    f.reset();
+    sync();
+    res.hidden = true;
+    f.hidden = false;
+    show(0, true);
+  });
+
+  document.getElementById('kl-copy').addEventListener('click', function () {
+    function klart() { copied.textContent = 'Kopierat.'; }
+    function manuellt() {
+      ta.focus(); ta.select();
+      try { ta.setSelectionRange(0, ta.value.length); } catch (e) {}
+      try { if (document.execCommand('copy')) { klart(); return; } } catch (e) {}
+      copied.textContent = 'Markera texten och kopiera den.';
+    }
+    try {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(ta.value).then(klart, manuellt);
+        return;
+      }
+    } catch (e) {}
+    manuellt();
+  });
+
+  show(0, false);
+})();
+</script>
+</body></html>
